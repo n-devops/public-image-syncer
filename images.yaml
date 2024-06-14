@@ -1,26 +1,73 @@
-# docker.io
-"docker.io/nginx":
+########################################################################################### docker.io
+# docker.io/nginx
+"docker.io/nginx:/latest.*/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
-"docker.io/jetbrains/teamcity-server":
+"docker.io/nginx:/stable.*/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
+
+# docker.io/jetbrains/teamcity-server
+"docker.io/jetbrains/teamcity-server:/latest.*/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
-"docker.io/jetbrains/teamcity-agent":
+"docker.io/jetbrains/teamcity-server:/2024.*/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
+"docker.io/jetbrains/teamcity-server:/2025.*/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
+
+# docker.io/jetbrains/teamcity-agent
+"docker.io/jetbrains/teamcity-agent:/latest.*/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
-"docker.io/adoptopenjdk/openjdk11":
+"docker.io/jetbrains/teamcity-agent:/2024.*/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
+"docker.io/jetbrains/teamcity-agent:/2025.*/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
+
+# docker.io/adoptopenjdk/openjdk11
+"docker.io/adoptopenjdk/openjdk11:latest":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11"
-"docker.io/eclipse-temurin":
+"docker.io/adoptopenjdk/openjdk11:debian":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11"
+
+# docker.io/eclipse-temurin 11
+"docker.io/eclipse-temurin:11,11-jre,11-jdk":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
-"docker.io/openresty/openresty":
+"docker.io/eclipse-temurin:11-alpine,11-centos7,11-focal,11-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:11-jdk-alpine,11-jdk-centos7,11-jdk-focal,11-jdk-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:11-jre-alpine,11-jre-centos7,11-jre-focal,11-jre-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+# docker.io/eclipse-temurin 17
+"docker.io/eclipse-temurin:17,17-jre,17-jdk":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:17-alpine,17-centos7,17-focal,17-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:17-jdk-alpine,17-jdk-centos7,17-jdk-focal,17-jdk-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:17-jre-alpine,17-jre-centos7,17-jre-focal,17-jre-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+# docker.io/eclipse-temurin 21
+"docker.io/eclipse-temurin:21,21-jre,21-jdk":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:21-alpine,21-centos7,21-focal,21-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:21-jdk-alpine,21-jdk-centos7,21-jdk-focal,21-jdk-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/eclipse-temurin:21-jre-alpine,21-jre-centos7,21-jre-focal,21-jre-jammy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+
+# docker.io/openresty/openresty
+"docker.io/openresty/openresty:latest,jammy,focal,alpine":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openresty_openresty"
 
-# elastic
-"docker.elastic.co/elasticsearch/elasticsearch":
+########################################################################################### docker.elastic.co
+"docker.elastic.co/elasticsearch/elasticsearch:7.6.2,7.17.22,8.14.1":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_elasticsearch_elasticsearch"
-"docker.elastic.co/logstash/logstash":
+"docker.elastic.co/logstash/logstash:7.6.2,7.17.22,8.14.1":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_logstash_logstash"
-"docker.elastic.co/kibana/kibana":
+"docker.elastic.co/kibana/kibana:7.6.2,7.17.22,8.14.1":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_kibana_kibana"
 
-# kubernetes
+########################################################################################### kubernetes
 "registry.k8s.io/kube-apiserver":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
 "registry.k8s.io/kube-controller-manager":
