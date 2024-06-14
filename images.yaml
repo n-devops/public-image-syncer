@@ -6,11 +6,11 @@
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
 
 # docker.io/jetbrains/teamcity-server
-"docker.io/jetbrains/teamcity-server:/2024.[0-9]+/":
+"docker.io/jetbrains/teamcity-server:/(2024|2025)(.[0-9]+)?/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
 
 # docker.io/jetbrains/teamcity-agent
-"docker.io/jetbrains/teamcity-agent:/(2024)(\.[0-9]+)?/":
+"docker.io/jetbrains/teamcity-agent:/(2024|2025)(.[0-9]+)?/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
 
 # docker.io/adoptopenjdk/openjdk11
@@ -66,23 +66,23 @@
 
 ########################################################################################### kubernetes
 # registry.k8s.io/kube-apiserver
-"registry.k8s.io/kube-apiserver:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"registry.k8s.io/kube-apiserver:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
 
 # registry.k8s.io/kube-controller-manager
-"registry.k8s.io/kube-controller-manager:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"registry.k8s.io/kube-controller-manager:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
 
 # registry.k8s.io/kube-scheduler
-"registry.k8s.io/kube-scheduler:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"registry.k8s.io/kube-scheduler:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
 
 # registry.k8s.io/kube-proxy
-"registry.k8s.io/kube-proxy:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"registry.k8s.io/kube-proxy:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
 
 # registry.k8s.io/coredns/coredns
-"registry.k8s.io/coredns/coredns:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"registry.k8s.io/coredns/coredns:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_coredns_coredns"
 
 # registry.k8s.io/pause
@@ -90,21 +90,21 @@
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_pause"
 
 # registry.k8s.io/etcd
-"registry.k8s.io/etcd:/([0-9]+)\.([0-9]+)\.([0-9]+)(.*)/":
+"registry.k8s.io/etcd:/([0-9]+).([0-9]+).([0-9]+)(.*)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_etcd"
 
 # docker.io/calico/kube-controllers
-"docker.io/calico/kube-controllers:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"docker.io/calico/kube-controllers:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_kube-controllers"
 
 # docker.io/calico/cni
-"docker.io/calico/cni:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"docker.io/calico/cni:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_cni"
 
 # docker.io/calico/node
-"docker.io/calico/node:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"docker.io/calico/node:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_node"
 
 # ghcr.io/kube-vip/kube-vip
-"ghcr.io/kube-vip/kube-vip:/v([0-9]+)\.([0-9]+)\.([0-9]+)/":
+"ghcr.io/kube-vip/kube-vip:/v([0-9]+).([0-9]+).([0-9]+)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip"
