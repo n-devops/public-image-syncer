@@ -6,11 +6,11 @@
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
 
 # docker.io/jetbrains/teamcity-server
-"docker.io/jetbrains/teamcity-server:/(2024|2025)(\.[0-9]+)?/":
+"docker.io/jetbrains/teamcity-server:/(2024)(\.[0-9]+)?/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
 
 # docker.io/jetbrains/teamcity-agent
-"docker.io/jetbrains/teamcity-agent:/(2024|2025)(\.[0-9]+)?/":
+"docker.io/jetbrains/teamcity-agent:/(2024)(\.[0-9]+)?/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
 
 # docker.io/adoptopenjdk/openjdk11
