@@ -1,24 +1,16 @@
 ########################################################################################### docker.io
 # docker.io/nginx
-"docker.io/nginx:/latest.*/":
+"docker.io/nginx:latest":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
 "docker.io/nginx:/stable.*/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
 
 # docker.io/jetbrains/teamcity-server
-"docker.io/jetbrains/teamcity-server:/latest.*/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
-"docker.io/jetbrains/teamcity-server:/2024.*/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
-"docker.io/jetbrains/teamcity-server:/2025.*/":
+"docker.io/jetbrains/teamcity-server:/^(2024|2025)(\.[0-9]+)?$/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
 
 # docker.io/jetbrains/teamcity-agent
-"docker.io/jetbrains/teamcity-agent:/latest.*/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
-"docker.io/jetbrains/teamcity-agent:/2024.*/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
-"docker.io/jetbrains/teamcity-agent:/2025.*/":
+"docker.io/jetbrains/teamcity-agent:/^(2024|2025)(\.[0-9]+)?$/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
 
 # docker.io/adoptopenjdk/openjdk11
