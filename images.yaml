@@ -86,7 +86,7 @@
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_coredns_coredns"
 
 # registry.k8s.io/pause
-"registry.k8s.io/pause:/([0-9]+)\.([0-9]+)(.*)/":
+"registry.k8s.io/pause:/([0-9]+).([0-9]+)(.*)/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_pause"
 
 # registry.k8s.io/etcd
