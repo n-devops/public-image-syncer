@@ -9,6 +9,8 @@
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11"
 "docker.io/eclipse-temurin":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+"docker.io/openresty/openresty":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openresty_openresty"
 
 # elastic
 "docker.elastic.co/elasticsearch/elasticsearch":
