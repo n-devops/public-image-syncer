@@ -1,1 +1,15 @@
-docker.io/nginx: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx
+# docker.io
+"docker.io/nginx":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
+"docker.io/jetbrains/teamcity-server":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server"
+"docker.io/jetbrains/teamcity-agent":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent"
+"docker.io/adoptopenjdk/openjdk11":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11"
+"docker.io/eclipse-temurin":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_eclipse-temurin"
+
+# elastic
+"docker.elastic.co/elasticsearch/elasticsearch":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_elasticsearch_elasticsearch"
