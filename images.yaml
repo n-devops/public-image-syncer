@@ -13,3 +13,31 @@
 # elastic
 "docker.elastic.co/elasticsearch/elasticsearch":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_elasticsearch_elasticsearch"
+"docker.elastic.co/logstash/logstash":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_logstash_logstash"
+"docker.elastic.co/kibana/kibana":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_kibana_kibana"
+
+# kubernetes
+"registry.k8s.io/kube-apiserver":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+"registry.k8s.io/kube-controller-manager":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+"registry.k8s.io/kube-scheduler":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+"registry.k8s.io/kube-proxy":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+"registry.k8s.io/coredns/coredns":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_coredns_coredns"
+"registry.k8s.io/pause":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_pause"
+"registry.k8s.io/etcd":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_etcd"
+"docker.io/calico/kube-controllers":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_kube-controllers"
+"docker.io/calico/cni":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_cni"
+"docker.io/calico/node":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_node"
+"ghcr.io/kube-vip/kube-vip":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip"
