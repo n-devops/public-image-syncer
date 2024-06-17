@@ -87,83 +87,83 @@
 # registry.k8s.io/kube-apiserver
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-apiserver
 "registry.k8s.io/kube-apiserver:/^(v1.25)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver"
 "registry.k8s.io/kube-apiserver:/^(v1.26)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver"
 "registry.k8s.io/kube-apiserver:/^(v1.27)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver"
 "registry.k8s.io/kube-apiserver:/^(v1.28)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver"
 "registry.k8s.io/kube-apiserver:/^(v1.29)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver"
 "registry.k8s.io/kube-apiserver:/^(v1.30)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-apiserver"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver"
 
 ########################################################################################### registry.k8s.io/kube-controller-manager
 # registry.k8s.io/kube-controller-manager
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-controller-manager
 "registry.k8s.io/kube-controller-manager:/^(v1.25)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager"
 "registry.k8s.io/kube-controller-manager:/^(v1.26)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager"
 "registry.k8s.io/kube-controller-manager:/^(v1.27)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager"
 "registry.k8s.io/kube-controller-manager:/^(v1.28)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager"
 "registry.k8s.io/kube-controller-manager:/^(v1.29)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager"
 "registry.k8s.io/kube-controller-manager:/^(v1.30)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-controller-manager"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager"
 
 ########################################################################################### registry.k8s.io/kube-scheduler
 # registry.k8s.io/kube-scheduler
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-scheduler
 "registry.k8s.io/kube-scheduler:/^(v1.25)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler"
 "registry.k8s.io/kube-scheduler:/^(v1.26)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler"
 "registry.k8s.io/kube-scheduler:/^(v1.27)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler"
 "registry.k8s.io/kube-scheduler:/^(v1.28)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler"
 "registry.k8s.io/kube-scheduler:/^(v1.29)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler"
 "registry.k8s.io/kube-scheduler:/^(v1.30)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-scheduler"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler"
 
 ########################################################################################### registry.k8s.io/kube-proxy
 # registry.k8s.io/kube-proxy
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-proxy
 "registry.k8s.io/kube-proxy:/^(v1.25)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy"
 "registry.k8s.io/kube-proxy:/^(v1.26)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy"
 "registry.k8s.io/kube-proxy:/^(v1.27)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy"
 "registry.k8s.io/kube-proxy:/^(v1.28)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy"
 "registry.k8s.io/kube-proxy:/^(v1.29)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy"
 "registry.k8s.io/kube-proxy:/^(v1.30)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_kube-proxy"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy"
 
 ########################################################################################### registry.k8s.io/coredns/coredns
 # registry.k8s.io/coredns/coredns
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/coredns/coredns
 "registry.k8s.io/coredns/coredns:/^v([0-9]+)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_coredns_coredns"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/coredns"
 
 ########################################################################################### registry.k8s.io/pause
 # registry.k8s.io/pause
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/pause
 "registry.k8s.io/pause:/^([0-9]+)(.[0-9]+)*$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_pause"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/pause"
 
 ########################################################################################### registry.k8s.io/etcd
 # registry.k8s.io/etcd
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/etcd
 "registry.k8s.io/etcd:/^(3).(.[0-9]+)*(-[0-9]+)?$/":
-  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_etcd"
+  - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/etcd"
 
 ########################################################################################### docker.io/calico/kube-controllers
 # docker.io/calico/kube-controllers
