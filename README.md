@@ -13,11 +13,9 @@ https://github.com/AliyunContainerService/image-syncer
 
 ## 项目结构
 
-* [github_auth.yaml](github_auth.yaml): GitHub 公共镜像认证配置
-* [github_image.yaml](github_image.yaml): GitHub 公共镜像拉取配置
-* [auth.yaml](images.yaml): 正在使用的私服认证配置
-* [generate_image.yml](generate_image.yml): 根据 GitHub 生成的私服镜像拉取配置
-* [images.yaml](images.yaml): 正在使用的私服拉取配置
+* [auth.yaml](images.yaml): 正在使用的认证配置
+* [images.yaml](images.yaml): GitHub 公共镜像拉取配置
+* [generate_image.yml](generate_image.yml): 根据 GitHub调用`main.py`生成的私服镜像拉取配置
 * [main.py](main.py): 使用python 进行配置生成
 
 ## 镜像库映射规则描述

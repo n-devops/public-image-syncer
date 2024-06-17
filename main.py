@@ -31,7 +31,7 @@ def process(tempLines):
 
 
 if __name__ == '__main__':
-    with open("images.yaml.yaml", 'r') as file:
+    with open("images.yaml", 'r') as file:
         content = file.read().splitlines()
 
     writeLines = []
