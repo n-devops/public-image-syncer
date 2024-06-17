@@ -52,5 +52,5 @@ if __name__ == '__main__':
         writeLines.extend(i)
 
     # 覆盖generate_image.yml
-    with open("generate_image.yml", 'w') as file:
+    with open("generate_image.yaml", 'w') as file:
         file.write('\n'.join(writeLines))
