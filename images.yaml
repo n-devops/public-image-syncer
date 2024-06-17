@@ -49,6 +49,8 @@
 # Tag list: https://explore.ggcr.dev/?repo=nginx
 "docker.io/nginx:/stable.*/":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
+"docker.io/nginx:latest":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nginx"
 
 ########################################################################################### docker.io/openresty
 # docker.io/openresty/openresty
