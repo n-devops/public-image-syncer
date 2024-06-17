@@ -162,7 +162,7 @@
 ########################################################################################### registry.k8s.io/etcd
 # registry.k8s.io/etcd
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/etcd
-"registry.k8s.io/etcd:/^(3).(.[0-9]+)*(-[0-9]+)?$/":
+"registry.k8s.io/etcd:/^(3)(.[0-9]+)*(-[0-9]+)?$/":
   - "registry.cn-beijing.aliyuncs.com/nstl_google_containers/etcd"
 
 ########################################################################################### docker.io/calico/kube-controllers
