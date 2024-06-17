@@ -16,11 +16,12 @@ jobs:
       group: ${{ github.workflow }}-sync-code
       cancel-in-progress: true
     steps:
-      - name: Hub Mirror Action.
-        uses: Yikun/hub-mirror-action@v1.4
+      - name: go-git-mirrors
+        uses: x-actions/git-mirrors@v0.3.0
         with:
           # 必选，需要同步的Github用户（源）
           src: github/NstlDev
+          src_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           # 必选，需要同步到的Gitee的用户（目的）
           dst: gitee/nstl-dev
           clone_style: ssh
