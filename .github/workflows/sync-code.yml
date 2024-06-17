@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-sync-code
+      cancel-in-progress: true
     steps:
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/gitee-mirror-action@v0.01
