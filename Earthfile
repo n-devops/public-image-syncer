@@ -24,4 +24,4 @@ teamcity-agent:
     # gradle 环境变量
     ENV GRADLE_HOME=/opt/gradle/gradle-8.7
     ENV PATH=$PATH:$GRADLE_HOME/bin
-    SAVE IMAGE docker.io/talk9/jetbrains-expansion/teamcity-agent:$tag
+    SAVE IMAGE --push docker.io/talk9/jetbrains-expansion/teamcity-agent:$tag
