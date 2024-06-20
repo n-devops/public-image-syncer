@@ -1,7 +1,7 @@
 # Earthfile
 
 # jetbrains
-teamcity-agent:
+teamcity-agent-build:
     ARG tag='2024.03.2'
     FROM jetbrains/teamcity-agent:$tag
     USER root
@@ -26,7 +26,7 @@ teamcity-agent:
     ENV PATH=$PATH:$GRADLE_HOME/bin
     SAVE IMAGE docker.io/talk9/jetbrains-expansion/teamcity-agent:$tag
 
-all:
-    BUILD +teamcity-agent --tag='2024.03'
-    BUILD +teamcity-agent --tag='2024.03.1'
-    BUILD +teamcity-agent --tag='2024.03.2'
+teamcity-agent:
+    BUILD +teamcity-agent-build --tag='2024.03'
+    BUILD +teamcity-agent-build --tag='2024.03.1'
+    BUILD +teamcity-agent-build --tag='2024.03.2'

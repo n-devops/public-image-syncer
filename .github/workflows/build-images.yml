@@ -30,4 +30,4 @@ jobs:
       - name: what version is installed?
         run: earthly --version
       - name: run the earthly
-        run: earthly --ci --push +teamcity-agent --tag='2024.03'
+        run: earthly --ci --push +teamcity-agent
