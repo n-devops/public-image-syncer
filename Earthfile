@@ -1,7 +1,7 @@
 VERSION 0.8
 
 # jetbrains
-teamcity-agent-build:
+teamcity-agent:
     ARG tag='2024.03.2'
     FROM jetbrains/teamcity-agent:$tag
     USER root
