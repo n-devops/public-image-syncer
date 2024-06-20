@@ -1,3 +1,11 @@
+########################################################################################### docker.io/consul
+# docker.io/consul
+# Tag list: https://explore.ggcr.dev/?repo=consul
+"docker.io/consul:/^(v1.11)(.[0-9]+)*(-rc[0-9]*)?$/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_consul"
+"docker.io/consul:/^(v1.15)(.[0-9]+)*(-rc[0-9]*)?$/":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_consul"
+
 ########################################################################################### docker.io/adoptopenjdk
 # docker.io/adoptopenjdk/openjdk11
 "docker.io/adoptopenjdk/openjdk11:latest":
