@@ -1,0 +1,5 @@
+# docker.io/talk9/jetbrains_teamcity-agent
+"docker.io/talk9/jetbrains_teamcity-agent": "docker-hosted.nstl-dev.com/jetbrains-expansion/elasticsearch"
+
+# docker.io/talk9/library_elasticsearch
+"docker.io/talk9/library_elasticsearch": "docker-hosted.nstl-dev.com/library-expansion/elasticsearch"

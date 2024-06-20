@@ -21,8 +21,8 @@ jobs:
       - name: Image Sync Action
         uses: NstlDev/image-sync-action@v1.1.2
         with:
-          auth_file: ./auth.yaml
-          images_file: ./images.yaml
+          auth_file: ./config/auth.yaml
+          images_file: ./config/images.yaml
           version: latest
           proc: 10
           # stderr 重定向至 stdout

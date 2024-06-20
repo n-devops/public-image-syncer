@@ -1,5 +1,9 @@
 import yaml
 
+# 读取 config/private-build.yaml 放在全局使用并加载
+with open("config/private-build.yaml", "r") as f:
+    privateBuildConfig = yaml.safe_load(f)
+
 
 def process(tempLines):
     tempStr = '\n'.join(tempLines)
@@ -8,8 +12,18 @@ def process(tempLines):
     for k, v in ymlData.items():
         split = k.split(":", 1)
         originalImageAddress = split[0]
+
+        # 自定义的公共镜像的拓展镜像, 如果privateBuildConfig包含k
+        if k in privateBuildConfig:
+            for vv in v:
+                writeLines.append(f"{vv}:")
+                writeLines.append(f"  - {privateBuildConfig[k]}")
+            continue
+
+
         if len(split) != 2:
             raise ValueError("split长度不为2")
+
         for vv in v:
             writeLines.append(f"{vv}:{split[1]}:")
             if originalImageAddress.startswith("docker.io/"):
@@ -31,7 +45,7 @@ def process(tempLines):
 
 
 if __name__ == '__main__':
-    with open("images.yaml", 'r') as file:
+    with open("config/images.yaml", 'r') as file:
         content = file.read().splitlines()
 
     writeLines = []
@@ -52,5 +66,5 @@ if __name__ == '__main__':
         writeLines.extend(i)
 
     # 覆盖generate_image.yml
-    with open("generate_image.yaml", 'w') as file:
+    with open("config/generate_image.yaml", 'w') as file:
         file.write('\n'.join(writeLines))

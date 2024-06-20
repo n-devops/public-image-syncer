@@ -29,9 +29,5 @@ jobs:
         run: docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_PASSWORD }}"
       - name: what version is installed?
         run: earthly --version
-      - name: build teamcity-agent
-        run: earthly --ci --push +teamcity-agent --tag='2024.03'
-      - name: build teamcity-agent
-        run: earthly --ci --push +teamcity-agent --tag='2024.03.1'
-      - name: build teamcity-agent
-        run: earthly --ci --push +teamcity-agent --tag='2024.03.2'
+      - name: build images
+        run: earthly --ci --push +all
