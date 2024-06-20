@@ -1,4 +1,4 @@
-# Earthfile
+VERSION 0.8
 
 # jetbrains
 teamcity-agent-build:
