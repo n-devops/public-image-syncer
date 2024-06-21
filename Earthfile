@@ -16,7 +16,7 @@ teamcity-agent-common:
     USER root
     RUN apt-get update -y > /dev/null 2>&1 \
         # node
-        && curl -fsSL https://deb.nodesource.com/setup_18.x |  bash -  \
+        && curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
         && apt-get install nodejs wget unzip jq -y > /dev/null 2>&1 \
         # standard-version
         && npm i -g standard-version > /dev/null 2>&1 \
