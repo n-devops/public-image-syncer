@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   # push触发
   push:
+    paths:
+      - Earthfile
+      - .github/workflows/build-images-sync.yml
     branches:
       - main
   schedule:

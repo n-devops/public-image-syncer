@@ -1,16 +1,19 @@
 # public-image-syncer
 
-公共镜像同步器, 同步公共镜像
+完成了公共镜像同步, 基于公共镜像构建, 两项功能
 
-## 同步器
+## 同步流程描述
 
-image-syncer-v1.5.4
-https://github.com/AliyunContainerService/image-syncer
+![sync-pipline.png](sync-pipline.png)
+
+1. 公共镜像同步器, 将镜像拉取到阿里云镜像仓库
+2. 公共镜像构建器, 将镜像构建后推送到阿里云镜像仓库
+3. Teamcity 将阿里云镜像仓库中的镜像拉取到私服
 
 ## 同步过程
 
-1. 利用GitHub Action同步镜像至阿里云北京站
-2. 利用Teamcity同步镜像至私服, 注意: 使用main.py 生成配置文件 images.yaml -> generate_image.yml
+1. 利用GitHub Action同步镜像或者构建镜像至阿里云北京站
+2. 利用Teamcity同步镜像至私服, 注意: 使用 main.py 生成配置文件
 
 ## 项目结构
 
@@ -20,13 +23,6 @@ https://github.com/AliyunContainerService/image-syncer
 * [generate_image.yml](config/generate_image.yaml): 根据 GitHub调用`main.py`生成的私服镜像拉取配置, generate_image.yml =
   images.yaml + build-images.yaml
 * [main.py](main.py): 私服镜像拉取配置生成脚本
-
-## 同步流程描述
-
-![sync-pipline.png](sync-pipline.png)
-
-1. 公共镜像同步器, 将镜像拉取到阿里云镜像仓库
-2. 公共镜像构建器, 将镜像构建后推送到阿里云镜像仓库
 
 ## 镜像库映射规则描述
 
@@ -48,3 +44,9 @@ https://github.com/AliyunContainerService/image-syncer
     4. docker.elastic.co/beats/filebeat-> docker-hosted.nstl-dev.com/library/filebeat
 5. 自定义的公共镜像的拓展镜像, 使用[build-images.yaml](config/build-images.yaml)规则文件中的描述, 映射成相应的镜像
     1. 镜像分为一次性构建镜像和持续构建镜像, 持续构建镜像会定时构建, 一次性构建镜像只会在手动构建时触发
+
+
+## 同步器来自于
+
+image-syncer-v1.5.4
+https://github.com/AliyunContainerService/image-syncer

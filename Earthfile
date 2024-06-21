@@ -40,6 +40,7 @@ teamcity-agent:
     BUILD +teamcity-agent-common --tag='2024.03.1'
     BUILD +teamcity-agent-common --tag='2024.03.2'
 
+# elasticsearch
 elasticsearch-common:
     ARG tag='7.6.2'
     ARG extTag=$tag-n-ext
@@ -52,9 +53,26 @@ elasticsearch:
     BUILD +elasticsearch-common --tag='7.6.2'
     BUILD +elasticsearch-common --tag='7.10.2'
 
+# adoptopenjdk
+adoptopenjdk-openjdk11-common:
+    ARG tag='debian'
+    ARG extTag=$tag-n-ext
+    FROM adoptopenjdk/openjdk11:$tag
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+    # 指定目录进行下载
+    WORKDIR /data
+
+    RUN apt-get update > /dev/null 2>&1 \
+        && apt-get install -y tzdata
+
+adoptopenjdk-openjdk11:
+    BUILD +adoptopenjdk-openjdk11-common --tag='debian'
+
 all:
-    BUILD +teamcity-agent
-    BUILD +elasticsearch
+    # BUILD +teamcity-agent
+    # BUILD +elasticsearch
+    BUILD +adoptopenjdk-openjdk11
 
 sync:
     FROM scratch

@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   # push触发
   push:
+    paths:
+      - .github/workflows/sync-images.yml
+      - config/images.yaml
     branches:
       - main
   schedule:

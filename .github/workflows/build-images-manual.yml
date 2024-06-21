@@ -6,9 +6,7 @@ on:
   push:
     paths:
       - Earthfile
-      - .arg
       - .github/workflows/build-images-manual.yml
-      - .github/workflows/build-images-sync.yml
     branches:
       - main
 
