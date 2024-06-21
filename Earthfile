@@ -57,27 +57,32 @@ elasticsearch:
 adoptopenjdk-openjdk11-common:
     ARG tag='debian'
     ARG extTag=$tag-n-ext
+    ARG skywalkingAgent='8.14.0'
     FROM adoptopenjdk/openjdk11:$tag
 
     #设置时区环境
     ENV TZ=Asia/Shanghai
+    ENV SKYWALKING_AGENT=$skywalkingAgent
     # 指定目录进行下载
     WORKDIR /data
 
     RUN apt-get update > /dev/null 2>&1 \
         # 安装时区包
-        && apt-get install -y tzdata \
+        && apt-get install -y tzdata > /dev/null 2>&1 \
         # 设置时区
         && echo $TZ > /etc/timezone \
         && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
         # 验证时区
-        && date -R && ls -l /etc/localtime && more /etc/sysconfig/clock \
+        && date -R && ls -l /etc/localtime \
         # 安装wget tini
-        && apt-get install -y wget tini \
+        && apt-get install -y wget tini > /dev/null 2>&1 \
         # 清理缓存
-        && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-
+        && apt-get clean && rm -rf /var/lib/apt/lists/* \
+        # 添加 skywalking agent 到 /data/agnet目录, eg: /data/agent/skywalking-agent.jar
+        && wget -O apache-skywalking-java-agent.tgz https://dlcdn.apache.org/skywalking/java-agent/$SKYWALKING_AGENT/apache-skywalking-java-agent-$SKYWALKING_AGENT.tgz \
+        && tar -zxvf apache-skywalking-java-agent.tgz \
+        && mv skywalking-agent agent \
+        && rm apache-skywalking-java-agent.tgz
 
 
 
