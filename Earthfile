@@ -79,8 +79,8 @@ adoptopenjdk-openjdk11-common:
         # 清理缓存
         && apt-get clean && rm -rf /var/lib/apt/lists/* \
         # 添加 skywalking agent 到 /data/agnet目录, eg: /data/agent/skywalking-agent.jar
-        && wget -O apache-skywalking-java-agent.tgz https://archive.apache.org/dist/skywalking/java-agent/$SKYWALKING_AGENT/apache-skywalking-java-agent-$SKYWALKING_AGENT.tgz \
-        && tar -zxvf apache-skywalking-java-agent.tgz \
+        && wget -O apache-skywalking-java-agent.tgz https://archive.apache.org/dist/skywalking/java-agent/$SKYWALKING_AGENT/apache-skywalking-java-agent-$SKYWALKING_AGENT.tgz1 > /dev/null 2>&1 \
+        && tar -zxvf apache-skywalking-java-agent.tgz > /dev/null 2>&1 \
         && mv skywalking-agent agent \
         && rm apache-skywalking-java-agent.tgz
 
