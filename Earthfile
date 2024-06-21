@@ -90,8 +90,8 @@ adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
 
 all:
-    # BUILD +teamcity-agent
-    # BUILD +elasticsearch
+    BUILD +teamcity-agent
+    BUILD +elasticsearch
     BUILD +adoptopenjdk-openjdk11
 
 sync:
