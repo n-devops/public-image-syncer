@@ -70,7 +70,7 @@ adoptopenjdk-openjdk11-common:
         # 设置时区
         && echo $TZ > /etc/timezone \
         && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
-        && date && ls -l /etc/localtime && timedatectl
+        && date -u +"%Y-%m-%dT%H:%M:%SZ" && ls -l /etc/localtime
 
 
 
