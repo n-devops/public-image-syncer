@@ -50,4 +50,4 @@ all:
     BUILD +elasticsearch-762
 
 sync:
-    RUN echo "运行sync"
+    FROM scratch
