@@ -52,7 +52,7 @@ elasticsearch:
 
 all:
     BUILD +teamcity-agent
-    BUILD +elasticsearch-762
+    BUILD +elasticsearch
 
 sync:
     FROM scratch
