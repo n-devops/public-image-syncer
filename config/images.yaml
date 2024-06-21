@@ -71,26 +71,52 @@
 ########################################################################################### docker.io/elasticsearch
 # docker.io/elasticsearch
 # Tag list: https://explore.ggcr.dev/?repo=elasticsearch
-"docker.io/elasticsearch:7.6.2,7.17.22":
+# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/elasticsearch/elasticsearch
+"docker.elastic.co/elasticsearch/elasticsearch:7.6.2":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch"
-"docker.io/elasticsearch:8.14.1":
+"docker.elastic.co/elasticsearch/elasticsearch:7.10.2":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch"
+"docker.elastic.co/elasticsearch/elasticsearch:7.17.22":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch"
+"docker.elastic.co/elasticsearch/elasticsearch:8.14.1":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch"
 
 ########################################################################################### docker.io/logstash
 # docker.io/logstash
 # Tag list: https://explore.ggcr.dev/?repo=logstash
-"docker.io/logstash:7.6.2,7.17.22":
+# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/logstash/logstash
+"docker.elastic.co/logstash/logstash:7.6.2":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_logstash"
-"docker.io/logstash:8.14.1":
+"docker.elastic.co/logstash/logstash:7.10.2":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_logstash"
+"docker.elastic.co/logstash/logstash:7.17.22":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_logstash"
+"docker.elastic.co/logstash/logstash:8.14.1":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_logstash"
 
 ########################################################################################### docker.io/kibana
 # docker.io/kibana
 # Tag list: https://explore.ggcr.dev/?repo=kibana
-"docker.io/kibana:7.6.2,7.17.22":
+# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/kibana/kibana
+"docker.elastic.co/kibana/kibana:7.6.2":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kibana"
-"docker.io/kibana:8.14.1":
+"docker.elastic.co/kibana/kibana:7.10.2":
   - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kibana"
+"docker.elastic.co/kibana/kibana:7.17.22":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kibana"
+"docker.elastic.co/kibana/kibana:8.14.1":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kibana"
+########################################################################################### filebeat 官方没有, 风格模仿
+# docker.io/kibana
+# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/beats/filebeat
+"docker.elastic.co/beats/filebeat:7.6.2":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_filebeat"
+"docker.elastic.co/beats/filebeat:7.10.2":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_filebeat"
+"docker.elastic.co/beats/filebeat:7.17.22":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_filebeat"
+"docker.elastic.co/beats/filebeat:8.14.1":
+  - "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_filebeat"
 
 ########################################################################################### kubernetes
 ########################################################################################### registry.k8s.io/kube-apiserver

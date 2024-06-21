@@ -28,6 +28,15 @@ def process(tempLines):
                 # originalImageAddress如果包含/coredns/coredns, 则替换成/coredns
                 if "/coredns/coredns" in originalImageAddress:
                     originalImageAddress = originalImageAddress.replace("/coredns/coredns", "/coredns", 1)
+            if originalImageAddress.startswith("docker.elastic.co/"):
+                originalImageAddress = originalImageAddress.replace("docker.elastic.co/elasticsearch/elasticsearch",
+                                                                    "library/elasticsearch", 1)
+                originalImageAddress = originalImageAddress.replace("docker.elastic.co/logstash/logstash",
+                                                                    "library/logstash", 1)
+                originalImageAddress = originalImageAddress.replace("docker.elastic.co/kibana/kibana",
+                                                                    "library/kibana", 1)
+                originalImageAddress = originalImageAddress.replace("docker.elastic.co/beats/filebeat",
+                                                                    "library/filebeat", 1)
             writeLines.append(f"  - docker-hosted.nstl-dev.com/{originalImageAddress}")
     return writeLines
 
