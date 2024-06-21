@@ -48,3 +48,6 @@ elasticsearch-762:
 all:
     BUILD +teamcity-agent
     BUILD +elasticsearch-762
+
+sync:
+    RUN echo "运行sync"

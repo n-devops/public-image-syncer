@@ -1,7 +1,7 @@
 import yaml
 
 # 读取 config/private-build.yaml 放在全局使用并加载
-with open("config/private-build.yaml", "r") as f:
+with open("config/build-images-mapping.yaml", "r") as f:
     privateBuildConfig = yaml.safe_load(f)
 
 
@@ -19,7 +19,6 @@ def process(tempLines):
                 writeLines.append(f"{vv}:")
                 writeLines.append(f"  - {privateBuildConfig[k]}")
             continue
-
 
         if len(split) != 2:
             raise ValueError("split长度不为2")

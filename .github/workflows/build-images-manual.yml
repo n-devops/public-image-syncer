@@ -1,0 +1,26 @@
+name: GitHub Actions Build Images For Manual
+on:
+  # 手动触发
+  workflow_dispatch:
+jobs:
+  build-images:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-build-images-manual
+      cancel-in-progress: true
+    env:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      FORCE_COLOR: 1
+    steps:
+      - uses: earthly/actions-setup@v1
+        with:
+          github-token: ${{ secrets.GITHUB_EARTHLY_TOKEN }}
+          version: "latest" # or pin to an specific version, e.g. "0.8.1"
+      - uses: actions/checkout@v2
+      - name: Docker login # to avoid dockerhub rate-limiting
+        run: docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_PASSWORD }}"
+      - name: what version is installed?
+        run: earthly --version
+      - name: build images
+        run: earthly --ci --push +all

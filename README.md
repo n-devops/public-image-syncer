@@ -32,3 +32,4 @@ https://github.com/AliyunContainerService/image-syncer
        v1.8.6 -> docker-hosted.nstl-dev.com/google_containers/coredns:v1.8.6
     3. kubeadm 使用时 --image-repository docker-hosted.nstl-dev.com/google_containers
 4. 自定义的公共镜像的拓展镜像, 使用[private-build.yaml](config%2Fprivate-build.yaml)规则文件中的描述, 映射成相应的镜像
+   1. 镜像分为一次性构建镜像和持续构建镜像, 持续构建镜像会定时构建, 一次性构建镜像只会在手动构建时触发 

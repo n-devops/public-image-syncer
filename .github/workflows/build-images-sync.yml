@@ -13,7 +13,7 @@ jobs:
   build-images:
     runs-on: ubuntu-latest
     concurrency:
-      group: ${{ github.workflow }}-build-images
+      group: ${{ github.workflow }}-build-images-sync
       cancel-in-progress: true
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -30,4 +30,4 @@ jobs:
       - name: what version is installed?
         run: earthly --version
       - name: build images
-        run: earthly --ci --push +all
+        run: earthly --ci --push +sync
