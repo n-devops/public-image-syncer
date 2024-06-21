@@ -24,7 +24,7 @@ jobs:
           version: "latest" # or pin to an specific version, e.g. "0.8.1"
       - uses: actions/checkout@v2
       - name: Docker login # to avoid dockerhub rate-limiting
-        run: docker login --username "${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}" --password "${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}"
+        run: docker login --username "${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}" --password "${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}" registry.cn-beijing.aliyuncs.com/public-image-mirror
       - name: what version is installed?
         run: earthly --version
       - name: build images
