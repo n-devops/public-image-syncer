@@ -8,9 +8,6 @@ VERSION 0.8
 # 官方镜像: eclipse-temurin:latest -> docker.io/talk9/library_eclipse-temurin:latest
 # 机构镜像: jetbrains/teamcity-agent:2024.03.2 -> docker.io/talk9/jetbrains_teamcity-agent:2024.03.2
 
-# docker.io
-ARG PREFIX_DOCKER_IO="registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_"
-
 # jetbrains
 teamcity-agent-common:
     ARG tag='2024.03.2'
