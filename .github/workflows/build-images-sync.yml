@@ -2,13 +2,6 @@ name: GitHub Actions Build Images For Sync
 on:
   # 手动触发
   workflow_dispatch:
-  # push触发
-  push:
-    paths:
-      - Earthfile
-      - .github/workflows/build-images-sync.yml
-    branches:
-      - main
   schedule:
     # every day at 7am & 7pm pacific
     - cron: "0 2,14 * * *"
