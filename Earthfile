@@ -45,7 +45,7 @@ elasticsearch-common:
     ARG extTag=$tag-n-ext
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_HANLP="https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v$tag/elasticsearch-analysis-hanlp-$tag.zip"
-    RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP} | grep -v '[='"
+    RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP}"
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch:$extTag
 
 elasticsearch:
