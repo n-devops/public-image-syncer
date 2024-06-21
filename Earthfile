@@ -11,6 +11,7 @@ VERSION 0.8
 # jetbrains
 teamcity-agent-common:
     ARG tag='2024.03.2'
+    ARG extTag=$tag-n-ext
     FROM jetbrains/teamcity-agent:$tag
     USER root
     RUN apt-get update -y \
@@ -32,7 +33,7 @@ teamcity-agent-common:
     # gradle 环境变量
     ENV GRADLE_HOME=/opt/gradle/gradle-8.7
     ENV PATH=$PATH:$GRADLE_HOME/bin
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent:$tag-n-ext
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent:$extTag
 
 teamcity-agent:
     BUILD +teamcity-agent-common --tag='2024.03'
@@ -41,10 +42,11 @@ teamcity-agent:
 
 elasticsearch-common:
     ARG tag='7.6.2'
+    ARG extTag=$tag-n-ext
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_HANLP="https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v$tag/elasticsearch-analysis-hanlp-$tag.zip"
     RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP}"
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch:$tag-n-ext
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch:$extTag
 
 elasticsearch:
     BUILD +elasticsearch-common --tag='7.6.2'
