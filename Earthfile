@@ -53,7 +53,7 @@ elasticsearch:
     BUILD +elasticsearch-common --tag='7.10.2'
 
 all:
-    BUILD +teamcity-agent
+    # BUILD +teamcity-agent
     BUILD +elasticsearch
 
 sync:
