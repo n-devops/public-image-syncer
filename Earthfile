@@ -41,10 +41,11 @@ teamcity-agent:
 
 elasticsearch-common:
     ARG tag='7.6.2'
+    ARG imageAddress=$PREFIX_DOCKER_IO"elasticsearch:"$tag"-n-ext"
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_HANLP="https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v$tag/elasticsearch-analysis-hanlp-$tag.zip"
     RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP}"
-    SAVE IMAGE --push $PREFIX_DOCKER_IO"elasticsearch:"$tag"-n-ext"
+    SAVE IMAGE --push $imageAddress
 
 elasticsearch:
     BUILD +elasticsearch-common --tag='7.6.2'
