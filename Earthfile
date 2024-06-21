@@ -70,7 +70,13 @@ adoptopenjdk-openjdk11-common:
         # 设置时区
         && echo $TZ > /etc/timezone \
         && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
-        && date -u +"%Y-%m-%dT%H:%M:%SZ" && ls -l /etc/localtime
+        # 验证时区
+        && date -R && ls -l /etc/localtime && more /etc/sysconfig/clock \
+        # 安装wget tini
+        && apt-get install -y wget tini \
+        # 清理缓存
+        && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 
 
