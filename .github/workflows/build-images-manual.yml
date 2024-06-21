@@ -2,6 +2,16 @@ name: GitHub Actions Build Images For Manual
 on:
   # 手动触发
   workflow_dispatch:
+  # push触发
+  push:
+    paths:
+      - Earthfile
+      - .arg
+      - .github/workflows/build-images-manual.yml
+      - .github/workflows/build-images-sync.yml
+    branches:
+      - main
+
 jobs:
   build-images:
     runs-on: ubuntu-latest
