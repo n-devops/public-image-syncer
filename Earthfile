@@ -9,7 +9,7 @@ VERSION 0.8
 # 机构镜像: jetbrains/teamcity-agent:2024.03.2 -> docker.io/talk9/jetbrains_teamcity-agent:2024.03.2
 
 # docker.io
-PREFIX_DOCKER_IO="registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io"
+ARG PREFIX_DOCKER_IO="registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_"
 
 # jetbrains
 teamcity-agent-common:
@@ -35,7 +35,7 @@ teamcity-agent-common:
     # gradle 环境变量
     ENV GRADLE_HOME=/opt/gradle/gradle-8.7
     ENV PATH=$PATH:$GRADLE_HOME/bin
-    SAVE IMAGE --push $PREFIX_DOCKER_IO"_jetbrains_teamcity-agent:"$tag"-n-ext"
+    SAVE IMAGE --push $PREFIX_DOCKER_IO"jetbrains_teamcity-agent:"$tag"-n-ext"
 
 teamcity-agent:
     BUILD +teamcity-agent-common --tag='2024.03'
@@ -47,7 +47,7 @@ elasticsearch-common:
     FROM elasticsearch:$tag
     ENV URL_HANLP="https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v$tag/elasticsearch-analysis-hanlp-$tag.zip"
     RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP}"
-    SAVE IMAGE --push $PREFIX_DOCKER_IO"_elasticsearch:"$tag"-n-ext"
+    SAVE IMAGE --push $PREFIX_DOCKER_IO"elasticsearch:"$tag"-n-ext"
 
 elasticsearch:
     BUILD +elasticsearch-common --tag='7.6.2'
