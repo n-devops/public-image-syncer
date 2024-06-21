@@ -1,9 +1,5 @@
 import yaml
 
-# 读取 config/private-build.yaml 放在全局使用并加载
-with open("config/build-images-mapping.yaml", "r") as f:
-    privateBuildConfig = yaml.safe_load(f)
-
 
 def process(tempLines):
     tempStr = '\n'.join(tempLines)
@@ -12,13 +8,6 @@ def process(tempLines):
     for k, v in ymlData.items():
         split = k.split(":", 1)
         originalImageAddress = split[0]
-
-        # 自定义的公共镜像的拓展镜像, 如果privateBuildConfig包含k
-        if k in privateBuildConfig:
-            for vv in v:
-                writeLines.append(f"{vv}:")
-                writeLines.append(f"  - {privateBuildConfig[k]}")
-            continue
 
         if len(split) != 2:
             raise ValueError("split长度不为2")
@@ -48,6 +37,11 @@ if __name__ == '__main__':
         content = file.read().splitlines()
 
     writeLines = []
+    # 合并 config/build-images.yaml
+    with open("config/build-images.yaml", "r") as f:
+        writeLines.extend(f.read().splitlines())
+        writeLines.append("")
+
     tempLines = []
     for line in content:
         line = line.strip()

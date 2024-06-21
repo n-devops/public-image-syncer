@@ -18,10 +18,16 @@ https://github.com/AliyunContainerService/image-syncer
 * [generate_image.yml](config/generate_image.yaml): 根据 GitHub调用`main.py`生成的私服镜像拉取配置
 * [main.py](main.py): 使用python 进行配置生成
 
+## 同步流程描述
+![img.png](img.png)
+1. 公共镜像同步器, 将镜像拉取到阿里云镜像仓库
+2. 公共镜像构建器, 将镜像构建后推送到阿里云镜像仓库
+
+
 ## 镜像库映射规则描述
 
 1. docker.io镜像, 官方镜像放在library项目下, 非官方镜像放在相应的项目下
-    1. 官方镜像: 如 docker.io/nginx:1.17.4 -> docker-hosted.nstl-dev.com/library/nginx:1.17.4
+    1. 官方镜像: 如 docker.io/nginx:1.17.4 ->  -> docker-hosted.nstl-dev.com/library/nginx:1.17.4
     2. 三方镜像: 如 docker.io/adoptopenjdk/openjdk11:latest -> docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11:latest
 2. ghcr.io镜像, 映射至仓库ghcr.io项目下, 如: ghcr.io/kube-vip/kube-vip:v0.5.0 ->
    docker-hosted.nstl-dev.com/ghcr.io/kube-vip/kube-vip:v0.5.0
