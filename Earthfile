@@ -58,13 +58,22 @@ adoptopenjdk-openjdk11-common:
     ARG tag='debian'
     ARG extTag=$tag-n-ext
     FROM adoptopenjdk/openjdk11:$tag
+
     #设置时区环境
     ENV TZ=Asia/Shanghai
     # 指定目录进行下载
     WORKDIR /data
 
     RUN apt-get update > /dev/null 2>&1 \
-        && apt-get install -y tzdata
+        # 安装时区包
+        && apt-get install -y tzdata \
+        # 设置时区
+        && echo $TZ > /etc/timezone \
+        && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
+        && date && ls -l /etc/localtime && timedatectl
+
+
+
 
 adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
