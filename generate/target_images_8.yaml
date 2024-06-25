@@ -1,0 +1,2 @@
+registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kibana:8.13.0:
+  - docker-hosted.nstl-dev.com/library/kibana
