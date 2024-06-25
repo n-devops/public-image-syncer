@@ -1,0 +1,93 @@
+name: Target Sync Image
+on:
+  issues:
+    types:
+      - opened
+
+# https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'sync image')
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check Issue
+        id: get-image
+        env:
+          IMAGE: "${{ github.event.issue.title }}"
+        run: |
+          ORIGIN_IMAGE="${IMAGE}"
+          CORRECT_IMAGE="$(./hack/correct-image.sh "${ORIGIN_IMAGE}")"
+          if [[ "${CORRECT_IMAGE}" == "" ]]; then
+            gh issue comment ${{ github.event.issue.number }} -b "镜像 '${ORIGIN_IMAGE}' 不是一个镜像"
+            exit 1
+          fi
+          if [[ "${CORRECT_IMAGE}" != "${ORIGIN_IMAGE}" ]]; then
+            if ! ./hack/verify-allows.sh ./allows.txt "${CORRECT_IMAGE}"; then
+              gh issue comment ${{ github.event.issue.number }} -b "镜像 '${ORIGIN_IMAGE}' 不存在呢, 也许应该是 '${CORRECT_IMAGE}', 并且不在白名单列表里, 不支持同步和访问<br>可以将其添加到[白名单](https://github.com/${{ github.repository }}/issues/2328)"
+            else
+              gh issue comment ${{ github.event.issue.number }} -b "镜像 '${ORIGIN_IMAGE}' 不存在呢, 也许应该是 '${CORRECT_IMAGE}'"
+            fi
+            exit 1
+          fi
+          if ! ./hack/verify-allows.sh ./allows.txt "${ORIGIN_IMAGE}"; then
+            gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 不在白名单列表里, 不支持同步和访问<br>可以将其添加到[白名单](https://github.com/${{ github.repository }}/issues/2328)"
+            exit 1
+          fi
+          echo "image=${ORIGIN_IMAGE}" >> $GITHUB_OUTPUT
+
+      - name: Check Image
+        run: |
+          ORIGIN_IMAGE="${{ steps.get-image.outputs.image }}"
+          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 同步中...<br>[详情请查看](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+
+      - name: Generate Image yaml
+        run: |
+          python target.py ${{ github.event.issue.number }} ${{ steps.get-image.outputs.image }}
+          cat temp_images.yaml
+
+      - name: Image Sync Action
+        uses: NstlDev/image-sync-action@v1.1.2
+        with:
+          auth_file: ./config/auth.yaml
+          images_file: ./generate/temp_images.yaml
+          version: latest
+          proc: 10
+          # stderr 重定向至 stdout
+          append_script: '2>&1 | grep -v "Auth information not found" | grep -v "Finish synchronizing blob sha256:"'
+        env:
+          ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}
+          ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}
+
+      - name: Sync Images
+        run: |
+          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 同步完成"
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          branch: main
+          default_author: github_actions
+          message: 'Generated generate/images.yaml'
+          add: 'generate/target_images_*.yaml'
+          push: false
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
+      - name: Fail Sync
+        if: failure()
+        run: |
+          ORIGIN_IMAGE="${{ steps.get-image.outputs.image }}"
+          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 同步失败[详情请查看](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})<br>请检查镜像是否存在以及在白名单, [查看成功例子](https://github.com/${{ github.repository }}/issues?q=is%3Aissue+is%3Aclosed+label%3A%22sync+image+succeeded%22)<br>如有疑问请回复 /auto-cc 召唤帮助"
+          gh issue edit ${{ github.event.issue.number }} --add-label "sync image failure" -b "IMAGE SYNC"
+          gh issue close ${{ github.event.issue.number }} --reason "not planned"
