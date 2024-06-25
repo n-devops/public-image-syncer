@@ -27,8 +27,8 @@ jobs:
       - name: Check for images.yaml Changes
         id: check_changes
         run: |
-          git diff --quiet || echo "File changed"
-          echo "changed=$(test -n $(git status --porcelain))" >> $GITHUB_OUTPUT
+          git diff --quiet HEAD -- generate/images.yaml || echo "File changed"
+          echo "changed=$(test -n $(git diff --name-only HEAD -- generate/images.yaml))" >> $GITHUB_OUTPUT
       - run: echo "changed=${{ steps.check_changes.outputs.changed }}"
       - name: Commit and Push Changes
         if: steps.check_changes.outputs.changed == 'true'
