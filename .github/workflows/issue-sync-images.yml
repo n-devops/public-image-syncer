@@ -18,6 +18,7 @@ jobs:
       contents: write           # 'write' access to repository contents
       pull-requests: write      # 'write' access to pull requests
       issues: write
+      repository-projects: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
