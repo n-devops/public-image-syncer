@@ -28,7 +28,8 @@ jobs:
         id: check_changes
         run: |
           git diff --quiet || echo "File changed"
-          echo ::set-output name=changed::$(test -n "$(git status --porcelain)")
+          echo "changed=$(test -n "$(git status --porcelain)" >> $GITHUB_OUTPUT
+      - run echo "changed=${{ steps.check_changes.outputs.changed }}"
       - name: Commit and Push Changes
         if: steps.check_changes.outputs.changed == 'true'
         run: |
