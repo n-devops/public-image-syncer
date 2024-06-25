@@ -15,6 +15,9 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-sync-repository
       cancel-in-progress: true
+    permissions:                # Job-level permissions configuration starts here
+      contents: write           # 'write' access to repository contents
+      pull-requests: write      # 'write' access to pull requests
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v5
