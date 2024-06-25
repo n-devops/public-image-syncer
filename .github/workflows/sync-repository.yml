@@ -24,11 +24,13 @@ jobs:
         run: pip install pyyaml
       - name: generate images.yaml
         run: python main.py
-      - name: Commit and Push Changes
-        run: |
-          git add generate/images.yaml
-          git commit -m "Auto-generated file"
-          git push
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: "Action"
+          author_email: action@example.com
+          message: 'Generated generate/images.yaml'
+          add: 'generate/images.yaml'
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
         with:
