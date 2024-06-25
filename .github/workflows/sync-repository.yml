@@ -33,6 +33,8 @@ jobs:
           add: 'generate/images.yaml'
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           src: github/NstlDev
           dst: gitee/NstlDev
