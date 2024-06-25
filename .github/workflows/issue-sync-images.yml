@@ -25,7 +25,7 @@ jobs:
         env:
           IMAGE: "${{ github.event.issue.title }}"
         run: |
-          chmod +x -R ./hack
+          chmod +x ./hack/correct-image.sh ./hack/verify-allows.sh
           ORIGIN_IMAGE="${IMAGE}"
           CORRECT_IMAGE="$(./hack/correct-image.sh "${ORIGIN_IMAGE}")"
           if [[ "${CORRECT_IMAGE}" == "" ]]; then
