@@ -20,7 +20,7 @@
 * [auth.yaml](config/images.yaml): 正在使用的认证配置
 * [images.yaml](config/images.yaml): 公共镜像同步器同步配置
 * [build-images.yaml](config/build-images.yaml): 公共镜像构建器同步配置
-* [generate_image.yml](config/generate_image.yaml): 根据 GitHub调用`main.py`生成的私服镜像拉取配置, generate_image.yml =
+* [generate_image.yml](generate_image.yaml): 根据 GitHub调用`main.py`生成的私服镜像拉取配置, generate_image.yml =
   images.yaml + build-images.yaml
 * [main.py](main.py): 私服镜像拉取配置生成脚本
 
@@ -44,7 +44,6 @@
     4. docker.elastic.co/beats/filebeat-> docker-hosted.nstl-dev.com/library/filebeat
 5. 自定义的公共镜像的拓展镜像, 使用[build-images.yaml](config/build-images.yaml)规则文件中的描述, 映射成相应的镜像
     1. 镜像分为一次性构建镜像和持续构建镜像, 持续构建镜像会定时构建, 一次性构建镜像只会在手动构建时触发
-
 
 ## 同步器来自于
 

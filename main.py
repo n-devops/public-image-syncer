@@ -67,6 +67,6 @@ if __name__ == '__main__':
         i = process(tempLines)
         writeLines.extend(i)
 
-    # 覆盖generate_image.yml
-    with open("config/generate_image.yaml", 'w') as file:
+    # 覆盖generate/images.yaml
+    with open("generate/images.yaml", 'w') as file:
         file.write('\n'.join(writeLines))

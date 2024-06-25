@@ -2,13 +2,12 @@ name: GitHub Actions Sync Repository
 on:
   # 手动触发
   workflow_dispatch:
-#  # push触发
-#  push:
-#    paths:
-#      - Earthfile
-#      - .github/workflows/build-images-manual.yml
-#    branches:
-#      - main
+  # push触发
+  push:
+    paths-ignore:
+      - generate/images.yaml
+    branches:
+      - main
 
 jobs:
   build-images:
@@ -17,6 +16,23 @@ jobs:
       group: ${{ github.workflow }}-sync-repository
       cancel-in-progress: true
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: generate images.yaml
+        run: python main.py
+      - name: Check for images.yaml Changes
+        id: check_changes
+        run: |
+          git diff --quiet || echo "File changed"
+          echo ::set-output name=changed::$(test -n "$(git status --porcelain)")
+      - name: Commit and Push Changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git add generate/images.yaml
+          git commit -m "Auto-generated file"
+          git push
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
         with:
