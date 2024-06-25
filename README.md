@@ -17,12 +17,10 @@
 
 ## 项目结构
 
-* [auth.yaml](config/images.yaml): 正在使用的认证配置
+* [auth.yaml](config/images.yaml): 认证配置
 * [images.yaml](config/images.yaml): 公共镜像同步器同步配置
-* [build-images.yaml](config/build-images.yaml): 公共镜像构建器同步配置
-* [generate_image.yml](generate_image.yaml): 根据 GitHub调用`main.py`生成的私服镜像拉取配置, generate_image.yml =
-  images.yaml + build-images.yaml
-* [main.py](main.py): 私服镜像拉取配置生成脚本
+* [Earthfile](Earthfile): 基于公共镜像进行构建的镜像, 构建后以tag -n-ext 结尾
+* [build-images.yaml](config/build-images.yaml): 构建的镜像同步配置
 
 ## 镜像库映射规则描述
 
