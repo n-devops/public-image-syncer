@@ -56,7 +56,7 @@ jobs:
       - name: Generate Image yaml
         run: |
           python target.py ${{ github.event.issue.number }} ${{ steps.get-image.outputs.image }}
-          cat temp_images.yaml
+          cat ./generate/temp_images.yaml
 
       - name: Image Sync Action
         uses: NstlDev/image-sync-action@v1.1.2
