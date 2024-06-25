@@ -31,14 +31,12 @@ jobs:
           default_author: github_actions
           message: 'Generated generate/images.yaml'
           add: 'generate/images.yaml'
-#          push: false
-        env:
+          push: false
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      #      - name: Push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          branch: ${{ github.ref }}
+          branch: ${{ github.ref }}
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
         env:
