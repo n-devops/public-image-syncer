@@ -1,0 +1,30 @@
+name: GitHub Actions Sync Repository
+on:
+  # 手动触发
+  workflow_dispatch:
+#  # push触发
+#  push:
+#    paths:
+#      - Earthfile
+#      - .github/workflows/build-images-manual.yml
+#    branches:
+#      - main
+
+jobs:
+  build-images:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-sync-repository
+      cancel-in-progress: true
+    steps:
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/NstlDev
+          dst: gitee/NstlDev
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          account_type: org
+          static_list: "public-image-syncer"
+          # src_account_type: org
+          # dst_account_type: org
