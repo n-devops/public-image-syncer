@@ -1,0 +1,3 @@
+registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_mongo:3.2.5:
+  - docker-hosted.nstl-dev.com/library/mongo
+
