@@ -32,6 +32,7 @@ jobs:
           endpoint: "oss-cn-beijing.aliyuncs.com"
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+      - run: ossutil cp generate/images.yaml oss://${{ secrets.OSS_BUCKET }}/
       - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
 
 #      - name: Commit changes
