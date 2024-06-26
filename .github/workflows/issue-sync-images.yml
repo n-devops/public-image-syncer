@@ -103,6 +103,8 @@ jobs:
       - name: Sync Images
         run: |
           gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 同步完成"
+          gh issue edit ${{ github.event.issue.number }} --add-label "sync image succeeded" -b "IMAGE SYNC"
+          gh issue close ${{ github.event.issue.number }} --reason "completed"
 
       - name: Fail Sync
         if: failure()

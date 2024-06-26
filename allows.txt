@@ -5,8 +5,9 @@ docker.io/library/solr
 docker.io/library/rabbitmq
 docker.io/minio/**
 docker.io/gitlab/**
-quay.io/calico/**
+docker.io/adoptopenjdk/**
 docker.elastic.co/beats/filebeat
 docker.elastic.co/kibana/kibana
 docker.elastic.co/logstash/logstash
 docker.elastic.co/elasticsearch/elasticsearch
+quay.io/calico/**
