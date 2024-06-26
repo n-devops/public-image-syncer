@@ -39,9 +39,12 @@ if __name__ == '__main__':
     str = '"' + image + '":\n  - ' + targetImage
     strArr = str.split('\n')
 
+    registry = to_private_registry(strArr)
+    registry.append('\n')
+
     # 覆盖generate/images.yaml
     with open("generate/temp_images.yaml", 'w') as file:
         file.write(str)
 
     with open(f"generate/target_images_{issueNumber}.yaml", 'w') as file:
-        file.write('\n'.join(to_private_registry(strArr)))
+        file.write('\n'.join())
