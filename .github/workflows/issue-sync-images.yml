@@ -71,10 +71,6 @@ jobs:
           ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}
           ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}
 
-      - name: Sync Images
-        run: |
-          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 同步完成"
-
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
@@ -103,6 +99,10 @@ jobs:
           static_list: "public-image-syncer"
           # src_account_type: org
           # dst_account_type: org
+
+      - name: Sync Images
+        run: |
+          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 同步完成"
 
       - name: Fail Sync
         if: failure()
