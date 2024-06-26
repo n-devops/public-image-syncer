@@ -32,3 +32,16 @@ jobs:
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
       - run: ossutil cp images.yaml oss://${{ secrets.OSS_BUCKET }}/
       - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          src: github/NstlDev
+          dst: gitee/NstlDev
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          account_type: org
+          static_list: "public-image-syncer"
+          # src_account_type: org
+          # dst_account_type: org
