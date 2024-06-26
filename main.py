@@ -29,5 +29,5 @@ if __name__ == '__main__':
         writeLines.extend(i)
 
     # 覆盖generate/images.yaml
-    with open("generate/images.yaml", 'w') as file:
+    with open("images.yaml", 'w') as file:
         file.write('\n'.join(writeLines))

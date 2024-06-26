@@ -56,13 +56,13 @@ jobs:
       - name: Generate Image yaml
         run: |
           python target.py ${{ github.event.issue.number }} ${{ steps.get-image.outputs.image }}
-          cat ./generate/temp_images.yaml
+          cat ./temp_images.yaml
 
       - name: Image Sync Action
         uses: NstlDev/image-sync-action@v1.1.2
         with:
           auth_file: ./config/auth.yaml
-          images_file: ./generate/temp_images.yaml
+          images_file: ./temp_images.yaml
           version: latest
           proc: 10
           # stderr 重定向至 stdout
@@ -76,7 +76,7 @@ jobs:
           endpoint: "oss-cn-beijing.aliyuncs.com"
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-      - run: ossutil cp generate/target_images_${{ github.event.issue.number }}.yaml oss://${{ secrets.OSS_BUCKET }}/
+      - run: ossutil cp target_images_${{ github.event.issue.number }}.yaml oss://${{ secrets.OSS_BUCKET }}/
       - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
 
       - name: Sync Images

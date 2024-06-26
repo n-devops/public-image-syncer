@@ -43,8 +43,8 @@ if __name__ == '__main__':
     registry.append('\n')
 
     # 覆盖generate/images.yaml
-    with open("generate/temp_images.yaml", 'w') as file:
+    with open("temp_images.yaml", 'w') as file:
         file.write(str)
 
-    with open(f"generate/target_images_{issueNumber}.yaml", 'w') as file:
+    with open(f"target_images_{issueNumber}.yaml", 'w') as file:
         file.write('\n'.join(registry))
