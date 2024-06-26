@@ -27,19 +27,13 @@ jobs:
         run: pip install pyyaml
       - name: generate images.yaml
         run: python main.py
-      - name: Deploy OSS
-        uses: taixw2/deploy-aliyun-oss@1
+      - uses: manyuanrong/setup-ossutil@v2.0
         with:
-          # aliyun config
-          region: oss-cn-beijing.aliyuncs.com
+          endpoint: "oss-cn-beijing.aliyuncs.com"
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-          bucket: ${{ secrets.OSS_BUCKET }}
-          secure: true
-          # deploy config
-          entry: generate/images.yaml
-          remote-dir: /
-          path-rewrite: ^generate/
+      - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
+
 #      - name: Commit changes
 #        uses: EndBug/add-and-commit@v9
 #        with:
