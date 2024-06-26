@@ -28,7 +28,7 @@ jobs:
       - name: generate images.yaml
         run: python main.py
       - name: Deploy OSS
-        uses: taixw2/deploy-aliyun-oss@v1
+        uses: taixw2/deploy-aliyun-oss@1
         with:
           # aliyun config
           region: oss-cn-beijing.aliyuncs.com
