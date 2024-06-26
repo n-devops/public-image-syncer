@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   # push触发
   push:
-    paths-ignore:
-      - generate
     branches:
       - main
 

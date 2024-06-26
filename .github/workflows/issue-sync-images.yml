@@ -71,34 +71,13 @@ jobs:
           ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}
           ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+      - uses: manyuanrong/setup-ossutil@v2.0
         with:
-          branch: main
-          default_author: github_actions
-          message: 'Generated generate/images.yaml'
-          add: 'generate/target_images_*.yaml'
-          push: false
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-
-      - name: Mirror the Github organization repos to Gitee.
-        uses: Yikun/hub-mirror-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          src: github/NstlDev
-          dst: gitee/NstlDev
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.GITEE_TOKEN }}
-          account_type: org
-          static_list: "public-image-syncer"
-          # src_account_type: org
-          # dst_account_type: org
+          endpoint: "oss-cn-beijing.aliyuncs.com"
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+      - run: ossutil cp generate/target_images_${{ github.event.issue.number }}.yaml oss://${{ secrets.OSS_BUCKET }}/
+      - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
 
       - name: Sync Images
         run: |
