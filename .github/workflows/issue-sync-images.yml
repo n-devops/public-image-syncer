@@ -14,7 +14,7 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'sync image')
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    permissions:                # Job-level permissions configuration starts here
+    permissions: # Job-level permissions configuration starts here
       contents: write           # 'write' access to repository contents
       pull-requests: write      # 'write' access to pull requests
       issues: write
@@ -89,6 +89,20 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          src: github/NstlDev
+          dst: gitee/NstlDev
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          account_type: org
+          static_list: "public-image-syncer"
+          # src_account_type: org
+          # dst_account_type: org
 
       - name: Fail Sync
         if: failure()

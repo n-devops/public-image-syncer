@@ -5,7 +5,7 @@ on:
   # push触发
   push:
     paths-ignore:
-      - generate/images.yaml
+      - generate
     branches:
       - main
 
