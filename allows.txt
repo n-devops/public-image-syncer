@@ -3,6 +3,7 @@ docker.io/library/consul
 docker.io/library/mariadb
 docker.io/library/solr
 docker.io/library/rabbitmq
+docker.io/library/mongo
 docker.io/minio/**
 docker.io/gitlab/**
 docker.io/adoptopenjdk/**
