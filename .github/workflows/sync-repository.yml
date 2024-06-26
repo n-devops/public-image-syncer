@@ -30,7 +30,7 @@ jobs:
           endpoint: "oss-cn-beijing.aliyuncs.com"
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-      - run: ossutil cp images.yaml oss://${{ secrets.OSS_BUCKET }}/
+      - run: ossutil cp -f images.yaml oss://${{ secrets.OSS_BUCKET }}/
       - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
