@@ -1,0 +1,3 @@
+registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:debian-jre:
+  - docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11
+
