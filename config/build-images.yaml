@@ -7,6 +7,7 @@
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch:/^(.*)(-n-ext)$/":
   - "docker-hosted.nstl-dev.com/library/elasticsearch"
 
+
 # docker.io/adoptopenjdk/openjdk11
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:/^(.*)(-n-ext)$/":
   - "docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11"
