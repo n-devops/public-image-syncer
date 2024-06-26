@@ -27,29 +27,42 @@ jobs:
         run: pip install pyyaml
       - name: generate images.yaml
         run: python main.py
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+      - name: Deploy OSS
+        uses: taixw2/deploy-aliyun-oss@v1
         with:
-          branch: main
-          default_author: github_actions
-          message: 'Generated generate/images.yaml'
-          add: 'generate/images.yaml'
-          push: false
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-      - name: Mirror the Github organization repos to Gitee.
-        uses: Yikun/hub-mirror-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          src: github/NstlDev
-          dst: gitee/NstlDev
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.GITEE_TOKEN }}
-          account_type: org
-          static_list: "public-image-syncer"
-          # src_account_type: org
-          # dst_account_type: org
+          # aliyun config
+          region: oss-cn-beijing.aliyuncs.com
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          secure: true
+          # deploy config
+          entry: generate/images.yaml
+          remote-dir: /
+          path-rewrite: ^generate/
+#      - name: Commit changes
+#        uses: EndBug/add-and-commit@v9
+#        with:
+#          branch: main
+#          default_author: github_actions
+#          message: 'Generated generate/images.yaml'
+#          add: 'generate/images.yaml'
+#          push: false
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          branch: ${{ github.ref }}
+#      - name: Mirror the Github organization repos to Gitee.
+#        uses: Yikun/hub-mirror-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          src: github/NstlDev
+#          dst: gitee/NstlDev
+#          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+#          dst_token: ${{ secrets.GITEE_TOKEN }}
+#          account_type: org
+#          static_list: "public-image-syncer"
+#          # src_account_type: org
+#          # dst_account_type: org
