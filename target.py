@@ -47,4 +47,4 @@ if __name__ == '__main__':
         file.write(str)
 
     with open(f"generate/target_images_{issueNumber}.yaml", 'w') as file:
-        file.write('\n'.join())
+        file.write('\n'.join(registry))
