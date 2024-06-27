@@ -17,6 +17,10 @@ docker.io/openresty/openresty
 docker.io/jetbrains/teamcity-server
 docker.io/jetbrains/teamcity-agent
 docker.io/portainer/agent
+docker.io/vesoft/nebula-metad
+docker.io/vesoft/nebula-storaged
+docker.io/vesoft/nebula-graphd
+docker.io/vesoft/nebula-console
 docker.elastic.co/beats/filebeat
 docker.elastic.co/kibana/kibana
 docker.elastic.co/logstash/logstash
