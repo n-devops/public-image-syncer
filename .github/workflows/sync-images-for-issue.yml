@@ -1,4 +1,4 @@
-name: Target Sync Image
+name: Target Sync Image For Issue
 on:
   issues:
     types:
@@ -78,6 +78,74 @@ jobs:
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
       - run: ossutil cp -f target_images_${{ github.event.issue.number }}.yaml oss://${{ secrets.OSS_BUCKET }}/
       - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
+      # 获取接收文件
+      - run: |
+          OSS_BUCKET=${{ secrets.OSS_BUCKET }}
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          # Function to check if the target file exists
+          check_file() {
+            ossutil ls oss://${OSS_BUCKET} | grep received_target_images_${ISSUE_NUMBER}.yaml
+          }
+          # Loop to check if the file exists
+          start_time=$(date +%s)
+          timeout=600
+          while [[ $(($(date +%s) - start_time)) -lt $timeout ]]; do
+            if check_file; then
+              echo "File found, exiting loop"
+              break
+            else
+              echo "File not found, waiting 30 seconds before trying again"
+              sleep 30
+            fi
+          done
+          # Check if file was found or not
+          if check_file; then
+            echo "File successfully retrieved"
+            ossutil rm -f oss://${OSS_BUCKET}/received_target_images_${ISSUE_NUMBER}.yaml
+          else
+            echo "File not found within $timeout seconds, retrieval failed"
+            ossutil rm -f oss://${OSS_BUCKET}/received_target_images_${ISSUE_NUMBER}.yaml
+            exit 1
+          fi
+      # 获取状态文件
+      - run: |
+          OSS_BUCKET=${{ secrets.OSS_BUCKET }}
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          # Function to check if the target file exists
+          check_file_failed() {
+            ossutil ls oss://${OSS_BUCKET} | grep failed_target_images_${ISSUE_NUMBER}.yaml
+          }
+          check_file_success() {
+            ossutil ls oss://${OSS_BUCKET} | grep success_target_images_${ISSUE_NUMBER}.yaml
+          }
+          # Loop to check if the file exists
+          start_time=$(date +%s)
+          timeout=600
+          while [[ $(($(date +%s) - start_time)) -lt $timeout ]]; do
+            if check_file_success||check_file_failed; then
+              echo "File found, exiting loop"
+              break
+            else
+              echo "File not found, waiting 30 seconds before trying again"
+              sleep 30
+            fi
+          done
+          
+          
+          # Check if file was found or not
+          if check_file_success||check_file_failed; then
+            if check_file_failed; then
+              echo "执行失败"
+              ossutil rm -f oss://${OSS_BUCKET}/failed_target_images_${ISSUE_NUMBER}.yaml
+              exit 1
+            else
+              echo "执行成功"
+              ossutil rm -f oss://${OSS_BUCKET}/success_target_images_${ISSUE_NUMBER}.yaml
+            fi
+          else
+            echo "File not found within $timeout seconds, retrieval failed"
+            exit 1
+          fi
 
       - name: Sync Images
         run: |
