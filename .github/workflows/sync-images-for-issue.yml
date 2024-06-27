@@ -88,7 +88,7 @@ jobs:
           }
           # Loop to check if the file exists
           start_time=$(date +%s)
-          timeout=600
+          timeout=300
           while [[ $(($(date +%s) - start_time)) -lt $timeout ]]; do
             if check_file; then
               echo "File found, exiting loop"
