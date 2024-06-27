@@ -104,6 +104,7 @@ jobs:
             ossutil rm -f oss://${OSS_BUCKET}/received_target_images_${ISSUE_NUMBER}.yaml
           else
             echo "File not found within $timeout seconds, retrieval failed"
+            gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 私服接收超时, 超时时间: $timeout seconds"
             ossutil rm -f oss://${OSS_BUCKET}/received_target_images_${ISSUE_NUMBER}.yaml
             exit 1
           fi
@@ -144,6 +145,7 @@ jobs:
             fi
           else
             echo "File not found within $timeout seconds, retrieval failed"
+            gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 私服同步超时, 超时时间: $timeout seconds"
             exit 1
           fi
 
