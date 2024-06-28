@@ -1,0 +1,130 @@
+public:
+  # 官方镜像
+  "docker.io/library/consul":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_consul
+    private: docker-hosted.nstl-dev.com/library/consul
+  "docker.io/library/eclipse-temurin":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin
+    private: docker-hosted.nstl-dev.com/library/eclipse-temurin
+  "docker.io/library/nginx":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_nginx
+    private: docker-hosted.nstl-dev.com/library/nginx
+  "docker.io/library/redis":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_redis
+    private: docker-hosted.nstl-dev.com/library/redis
+  "docker.io/library/mariadb":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb
+    private: docker-hosted.nstl-dev.com/library/mariadb
+  "docker.io/library/solr":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_solr
+    private: docker-hosted.nstl-dev.com/library/solr
+  "docker.io/library/rabbitmq":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_rabbitmq
+    private: docker-hosted.nstl-dev.com/library/rabbitmq
+  "docker.io/library/mongo":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo
+    private: docker-hosted.nstl-dev.com/library/mongo
+
+  # elastic 镜像比较特殊, 转存到官方镜像库中
+  "docker.elastic.co/elasticsearch/elasticsearch":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch
+    private: docker-hosted.nstl-dev.com/library/elasticsearch
+  "docker.elastic.co/logstash/logstash":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_logstash
+    private: docker-hosted.nstl-dev.com/library/logstash
+  "docker.elastic.co/kibana/kibana":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana
+    private: docker-hosted.nstl-dev.com/library/kibana
+  "docker.elastic.co/beats/filebeat":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_filebeat
+    private: docker-hosted.nstl-dev.com/library/filebeat
+
+  # calico
+  "docker.io/calico/cni":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_cni
+    private: docker-hosted.nstl-dev.com/calico/cni
+  "docker.io/calico/node":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_node
+    private: docker-hosted.nstl-dev.com/calico/node
+  "docker.io/calico/kube-controllers":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_calico_kube-controllers
+    private: docker-hosted.nstl-dev.com/calico/kube-controllers
+
+  # 机构镜像
+  "docker.io/adoptopenjdk/openjdk11":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11
+    private: docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11
+  "docker.io/jetbrains/teamcity-server":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-server
+    private: docker-hosted.nstl-dev.com/jetbrains/teamcity-server
+  "docker.io/jetbrains/teamcity-agent":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent
+    private: docker-hosted.nstl-dev.com/jetbrains/teamcity-agent
+  "docker.io/openresty/openresty":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openresty_openresty
+    private: docker-hosted.nstl-dev.com/openresty/openresty
+  "docker.io/portainer/agent":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_portainer_agent
+    private: docker-hosted.nstl-dev.com/portainer/agent
+  "docker.io/minio/minio":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_minio_minio
+    private: docker-hosted.nstl-dev.com/minio/minio
+  "docker.io/minio/mc":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_minio_mc
+    private: docker-hosted.nstl-dev.com/minio/mc
+
+  # NebulaGraph
+  "docker.io/vesoft/nebula-metad":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-metad
+    private: docker-hosted.nstl-dev.com/vesoft/nebula-metad
+  "docker.io/vesoft/nebula-storaged":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-storaged
+    private: docker-hosted.nstl-dev.com/vesoft/nebula-storaged
+  "docker.io/vesoft/nebula-graphd":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-graphd
+    private: docker-hosted.nstl-dev.com/vesoft/nebula-graphd
+  "docker.io/vesoft/nebula-console":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-console
+    private: docker-hosted.nstl-dev.com/vesoft/nebula-console
+  "docker.io/vesoft/nebula-graph-studio":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-graph-studio
+    private: docker-hosted.nstl-dev.com/vesoft/nebula-graph-studio
+
+  # registry.k8s.io 镜像
+  "registry.k8s.io/kube-apiserver":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-apiserver
+    private: docker-hosted.nstl-dev.com/google_containers/kube-apiserver
+  "registry.k8s.io/kube-controller-manager":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-controller-manager
+    private: docker-hosted.nstl-dev.com/google_containers/kube-controller-manager
+  "registry.k8s.io/kube-scheduler":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-scheduler
+    private: docker-hosted.nstl-dev.com/google_containers/kube-scheduler
+  "registry.k8s.io/kube-proxy":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/kube-proxy
+    private: docker-hosted.nstl-dev.com/google_containers/kube-proxy
+  "registry.k8s.io/etcd":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/etcd
+    private: docker-hosted.nstl-dev.com/google_containers/etcd
+  "registry.k8s.io/coredns/coredns":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/coredns
+    private: docker-hosted.nstl-dev.com/google_containers/coredns
+  "registry.k8s.io/pause":
+    transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/pause
+    private: docker-hosted.nstl-dev.com/google_containers/pause
+
+  # ghcr.io
+  "ghcr.io/kube-vip/kube-vip":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip
+    private: docker-hosted.nstl-dev.com/kube-vip/kube-vip
+
+build:
+  # docker.io/elasticsearch
+  "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch":
+    private: docker-hosted.nstl-dev.com/library/elasticsearch
+  # docker.io/jetbrains/teamcity-agent
+  "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent":
+    private: docker-hosted.nstl-dev.com/jetbrains/teamcity-agent
+  # docker.io/adoptopenjdk/openjdk11
+  "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11":
+    private: docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11

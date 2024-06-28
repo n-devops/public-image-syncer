@@ -28,24 +28,28 @@ jobs:
           IMAGE: "${{ github.event.issue.title }}"
         run: |
           chmod +x ./hack/correct-image.sh ./hack/verify-allows.sh
+          # 生成allows.txt
+          python hack/generate_allow.py
+          
           ORIGIN_IMAGE="${IMAGE}"
           CORRECT_IMAGE="$(./hack/correct-image.sh "${ORIGIN_IMAGE}")"
           if [[ "${CORRECT_IMAGE}" == "" ]]; then
             gh issue comment ${{ github.event.issue.number }} -b "镜像 '${ORIGIN_IMAGE}' 不是一个镜像"
             exit 1
           fi
+          
+          # 镜像格式检测
           if [[ "${CORRECT_IMAGE}" != "${ORIGIN_IMAGE}" ]]; then
-            if ! ./hack/verify-allows.sh ./allows.txt "${CORRECT_IMAGE}"; then
-              gh issue comment ${{ github.event.issue.number }} -b "镜像 '${ORIGIN_IMAGE}' 不存在呢, 也许应该是 '${CORRECT_IMAGE}', 并且不在白名单列表里, 不支持同步和访问<br>可以将其添加到[白名单](https://github.com/${{ github.repository }}/issues/2328)"
-            else
               gh issue comment ${{ github.event.issue.number }} -b "镜像 '${ORIGIN_IMAGE}' 不存在呢, 也许应该是 '${CORRECT_IMAGE}'"
-            fi
             exit 1
           fi
+          
+          # 镜像白名单检测
           if ! ./hack/verify-allows.sh ./allows.txt "${ORIGIN_IMAGE}"; then
-            gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 不在白名单列表里, 不支持同步和访问<br>可以将其添加到[白名单](https://github.com/${{ github.repository }}/issues/2328)"
+            gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 不在允许列表中, 不支持同步和访问"
             exit 1
           fi
+          
           echo "image=${ORIGIN_IMAGE}" >> $GITHUB_OUTPUT
 
       - name: Check Image
@@ -55,14 +59,15 @@ jobs:
 
       - name: Generate Image yaml
         run: |
-          python target.py ${{ github.event.issue.number }} ${{ steps.get-image.outputs.image }}
-          cat ./temp_images.yaml
+          python hack/generate_issue_images.py ${{ github.event.issue.number }} ${{ steps.get-image.outputs.image }}
+          cat issue_images.yaml
+          cat target_images_${{ github.event.issue.number }}.yaml
 
       - name: Image Sync Action
         uses: NstlDev/image-sync-action@v1.1.2
         with:
           auth_file: ./config/auth.yaml
-          images_file: ./temp_images.yaml
+          images_file: ./issue_images.yaml
           version: latest
           proc: 10
           # stderr 重定向至 stdout
