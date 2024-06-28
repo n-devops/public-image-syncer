@@ -86,7 +86,7 @@ jobs:
 
       - name: Sync Images
         run: |
-          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 转储完成, 私有化成功请查看私有镜像仓库"
+          gh issue comment ${{ github.event.issue.number }} -b "镜像 ${ORIGIN_IMAGE} 转储完成, 私有化成功请查看私有镜像仓库: http://docker-hosted.nstl-dev.com/"
           gh issue edit ${{ github.event.issue.number }} --add-label "sync image succeeded" -b "IMAGE SYNC"
           gh issue close ${{ github.event.issue.number }} --reason "completed"
 
