@@ -30,6 +30,7 @@ jobs:
           echo "---------------------------------------transfer-images.yaml"
           cat transfer-images.yaml
           
+          echo ""
           echo "---------------------------------------private-images.yaml"
           cat private-images.yaml
 
