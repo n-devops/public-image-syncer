@@ -7,7 +7,6 @@ on:
     paths:
       - .github/workflows/sync-images-for-schedule.yml
       - config/transfer-images.yaml
-      - config/image-mappings.yaml
     branches:
       - main
   schedule:
