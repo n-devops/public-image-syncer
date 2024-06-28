@@ -1,9 +1,0 @@
-########################################################################################### 私有构建
-# docker.io/jetbrains/teamcity-agent
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent:/^(.*)(-n-ext)$/":
-
-# docker.io/elasticsearch
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:/^(.*)(-n-ext)$/":
-
-# docker.io/adoptopenjdk/openjdk11
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:/^(.*)(-n-ext)$/":

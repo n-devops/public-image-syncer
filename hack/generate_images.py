@@ -1,8 +1,6 @@
 import yaml
-import sys
 
 if __name__ == '__main__':
-
     with open("./config/image-mappings.yaml", "r") as f:
         ymlData = yaml.load(f, Loader=yaml.FullLoader)
 
@@ -13,20 +11,12 @@ if __name__ == '__main__':
     privateLines = []
 
     # 自构建的镜像
-    with open("./config/images-by-build.yaml", "r") as f:
-        buildImages = yaml.load(f, Loader=yaml.FullLoader)
-    for buildImage in buildImages:
-        repository = buildImage.split(":")[0]
-
-        if repository not in buildMappings:
-            raise ValueError("image-mappings.yaml build 映射中没有此仓库的配置: " + repository)
-
-        privateRepository = buildMappings[repository]["private"]
-        privateLines.append('"' + buildImage + '":')
-        privateLines.append('  - ' + privateRepository)
+    for k, v in buildMappings.items():
+        privateLines.append('"' + k + '":')
+        privateLines.append('  - ' + v["private"])
 
     # 公共镜像
-    with open("./config/images-by-public.yaml", "r") as f:
+    with open("./config/transfer-images.yaml", "r") as f:
         publicImages = yaml.load(f, Loader=yaml.FullLoader)
     for publicImage in publicImages:
         repository = publicImage.split(":")[0]

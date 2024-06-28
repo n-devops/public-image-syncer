@@ -6,8 +6,8 @@ on:
   push:
     paths:
       - .github/workflows/sync-images-for-schedule.yml
-      - config/images-by-build.yaml
-      - config/images-by-public.yaml
+      - config/transfer-images.yaml
+      - config/image-mappings.yaml
     branches:
       - main
   schedule:
