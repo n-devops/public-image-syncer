@@ -72,6 +72,9 @@ public:
   "docker.io/minio/mc":
     transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_minio_mc
     private: docker-hosted.nstl-dev.com/minio/mc
+  "docker.io/grafana/grafana":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_grafana_grafana
+    private: docker-hosted.nstl-dev.com/grafana/grafana
 
   # NebulaGraph
   "docker.io/vesoft/nebula-metad":
