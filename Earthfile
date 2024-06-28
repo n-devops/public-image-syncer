@@ -4,9 +4,9 @@ VERSION 0.8
 # 1. 官方镜像, 在默认基础上增加library作为机构名称
 # 2. 机构名称, 仓库名称多个单词使用 '-' 进行连接
 # 3. 机构名称与仓库名称之间使用 '_' 进行连接
-# 官方镜像: nginx:latest -> docker.io/talk9/library_nginx:latest
-# 官方镜像: eclipse-temurin:latest -> docker.io/talk9/library_eclipse-temurin:latest
-# 机构镜像: jetbrains/teamcity-agent:2024.03.2 -> docker.io/talk9/jetbrains_teamcity-agent:2024.03.2
+# 官方镜像: nginx:latest -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_nginx:latest
+# 官方镜像: eclipse-temurin:latest -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:latest
+# 机构镜像: jetbrains/teamcity-agent:2024.03.2 -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent
 
 # jetbrains
 teamcity-agent-common:
@@ -47,7 +47,7 @@ elasticsearch-common:
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_HANLP="https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v$tag/elasticsearch-analysis-hanlp-$tag.zip"
     RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP}"
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticsearch:$extTag
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:$extTag
 
 elasticsearch:
     BUILD +elasticsearch-common --tag='7.6.2'
