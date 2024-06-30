@@ -28,4 +28,4 @@ jobs:
       - name: what version is installed?
         run: earthly --version
       - name: build images
-        run: earthly --ci --push +sync
+        run: earthly --ci --push +all
