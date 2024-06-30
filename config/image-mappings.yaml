@@ -115,6 +115,11 @@ public:
     transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_provectuslabs_kafka-ui
     private: docker-hosted.nstl-dev.com/provectuslabs/kafka-ui
 
+  # apache
+  "docker.io/apache/kafka":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_kafka
+    private: docker-hosted.nstl-dev.com/apache/kafka
+
   # NebulaGraph
   # Tag list: https://explore.ggcr.dev/?repo=docker.io/vesoft/nebula-metad
   "docker.io/vesoft/nebula-metad":
