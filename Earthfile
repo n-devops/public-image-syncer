@@ -39,6 +39,7 @@ teamcity-agent:
     BUILD +teamcity-agent-common --tag='2024.03'
     BUILD +teamcity-agent-common --tag='2024.03.1'
     BUILD +teamcity-agent-common --tag='2024.03.2'
+    BUILD +teamcity-agent-common --tag='2024.03.3'
 
 # elasticsearch
 elasticsearch-common:
