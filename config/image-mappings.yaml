@@ -110,6 +110,10 @@ public:
   "docker.io/zabbix/zabbix-agent":
     transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_zabbix_zabbix-agent
     private: docker-hosted.nstl-dev.com/zabbix/zabbix-agent
+  # Tag list: https://explore.ggcr.dev/?repo=docker.io/provectuslabs/kafka-ui
+  "docker.io/provectuslabs/kafka-ui":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_provectuslabs_kafka-ui
+    private: docker-hosted.nstl-dev.com/provectuslabs/kafka-ui
 
   # NebulaGraph
   # Tag list: https://explore.ggcr.dev/?repo=docker.io/vesoft/nebula-metad
