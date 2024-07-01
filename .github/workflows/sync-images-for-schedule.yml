@@ -44,7 +44,7 @@ jobs:
           ossutil ls oss://${{ secrets.OSS_BUCKET }}
 
       - name: Image Sync Action
-        uses: NstlDev/image-sync-action@v1.1.2
+        uses: n-devops/image-sync-action@v1.1.2
         with:
           auth_file: ./config/auth.yaml
           images_file: transfer-images.yaml
