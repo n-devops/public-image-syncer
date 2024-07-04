@@ -128,7 +128,8 @@
 ########################################################################################### registry.k8s.io/coredns/coredns
 # registry.k8s.io/coredns/coredns
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/coredns/coredns
-"registry.k8s.io/coredns/coredns:/^v([0-9]+)(.[0-9]+)*$/":
+#"registry.k8s.io/coredns/coredns:/^v([0-9]+)(.[0-9]+)*$/":
+"registry.k8s.io/coredns/coredns:/^(v1.10|v1.11|v1.12|v1.13)(.[0-9]+)*$/":
 
 ########################################################################################### registry.k8s.io/pause
 # registry.k8s.io/pause
@@ -138,7 +139,7 @@
 ########################################################################################### registry.k8s.io/etcd
 # registry.k8s.io/etcd
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/etcd
-"registry.k8s.io/etcd:/^(3)(.[0-9]+)*(-[0-9]+)?$/":
+"registry.k8s.io/etcd:/^(3|4)(.[0-9]+)*(-[0-9]+)?$/":
 
 ########################################################################################### docker.io/calico/kube-controllers
 # docker.io/calico/kube-controllers
@@ -167,4 +168,5 @@
 ########################################################################################### ghcr.io/kube-vip/kube-vip
 # ghcr.io/kube-vip/kube-vip
 # Tag list: https://explore.ggcr.dev/?repo=ghcr.io/kube-vip/kube-vip
+"ghcr.io/kube-vip/kube-vip:latest":
 "ghcr.io/kube-vip/kube-vip:/^v([0-9]+)(.[0-9]+)*$/":
