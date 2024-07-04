@@ -178,6 +178,13 @@ public:
     transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip
     private: docker-hosted.nstl-dev.com/kube-vip/kube-vip
 
+
+  # quay.io
+  # Tag list: https://explore.ggcr.dev/?repo=quay.io/openshift-scale/etcd-perf
+  "quay.io/openshift-scale/etcd-perf":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_openshift-scale_etcd-perf
+    private: docker-hosted.nstl-dev.com/openshift-scale/etcd-perf
+
 build:
   # docker.io/elasticsearch
   "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:/^(.*)(-n-ext)$/":
