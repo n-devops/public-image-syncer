@@ -31,6 +31,8 @@ jobs:
           # 生成allows.txt
           python hack/generate_allow.py
           
+          cat allows.txt
+          
           ORIGIN_IMAGE="${IMAGE}"
           CORRECT_IMAGE="$(./hack/correct-image.sh "${ORIGIN_IMAGE}")"
           if [[ "${CORRECT_IMAGE}" == "" ]]; then
