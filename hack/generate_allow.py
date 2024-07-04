@@ -14,5 +14,7 @@ if __name__ == '__main__':
     for k, v in ymlData['public'].items():
         writeLines.append(k)
 
+    writeLines.append('\n')
+
     with open(f"allows.txt", 'w') as file:
         file.write('\n'.join(writeLines))
