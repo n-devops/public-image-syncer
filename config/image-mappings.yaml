@@ -114,6 +114,10 @@ public:
   "docker.io/provectuslabs/kafka-ui":
     transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_provectuslabs_kafka-ui
     private: docker-hosted.nstl-dev.com/provectuslabs/kafka-ui
+  # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
+  "docker.io/bitnami/etcd":
+    transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_etcd
+    private: docker-hosted.nstl-dev.com/bitnami/etcd
 
   # apache
   "docker.io/apache/kafka":
