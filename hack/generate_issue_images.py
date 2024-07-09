@@ -7,7 +7,7 @@ if __name__ == '__main__':
     issueNumber = sys.argv[1]
     image = sys.argv[2].strip()
 
-    with open("./config/image-mappings.yaml", "r") as f:
+    with open("./config/transfer-mappings.yaml", "r") as f:
         ymlData = yaml.load(f, Loader=yaml.FullLoader)
 
     mappings = ymlData['public']

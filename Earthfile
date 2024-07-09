@@ -28,6 +28,9 @@ teamcity-agent-common:
         && wget -P /opt/gradle https://services.gradle.org/distributions/gradle-8.7-bin.zip \
         && unzip /opt/gradle/gradle-8.7-bin.zip -d /opt/gradle > /dev/null \
         && rm -rf /opt/gradle/gradle-8.7-bin.zip \
+        # yq
+        && wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq \
+        && chmod +x /usr/bin/yq \
         # 清理缓存
         && apt-get clean && rm -rf /var/lib/apt/lists/*
     # gradle 环境变量

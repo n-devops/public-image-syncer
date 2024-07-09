@@ -20,7 +20,7 @@
 * [auth.yaml](config/auth.yaml): 认证配置
 * [transfer-images.yaml](config/transfer-images.yaml): 公共镜像同步的同步配置
 * [Earthfile](Earthfile): 基于公共镜像进行构建的镜像, 构建后tag以 -n-ext 结尾
-* [image-mappings.yaml](config/image-mappings.yaml): 镜像映射描述
+* [transfer-mappings.yaml](config/transfer-mappings.yaml): 镜像映射描述
 
 ## 镜像库映射规则描述
 
@@ -70,7 +70,7 @@
        -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_filebeat </br>
        -> docker-hosted.nstl-dev.com/library/filebeat </br>
 
-5. 自定义的公共镜像的拓展镜像, 使用[image-mappings.yaml](config/image-mappings.yaml)规则文件中的描述, 映射成相应的镜像
+5. 自定义的公共镜像的拓展镜像, 使用[transfer-mappings.yaml](config/transfer-mappings.yaml)规则文件中的描述, 映射成相应的镜像
 
 @formatter:on
 
