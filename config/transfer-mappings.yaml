@@ -122,6 +122,15 @@
 "docker.io/apache/kafka":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_kafka
   private: docker-hosted.nstl-dev.com/apache/kafka
+"docker.io/apache/apisix":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix
+  private: docker-hosted.nstl-dev.com/apache/apisix
+"docker.io/apache/apisix-dashboard":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix-dashboard
+  private: docker-hosted.nstl-dev.com/apache/apisix-dashboard
+"docker.io/apache/apisix-ingress-controller":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix-ingress-controller
+  private: docker-hosted.nstl-dev.com/apache/apisix-ingress-controller
 
 # NebulaGraph
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/vesoft/nebula-metad
