@@ -8,9 +8,8 @@ if __name__ == '__main__':
     image = sys.argv[2].strip()
 
     with open("./config/transfer-mappings.yaml", "r") as f:
-        ymlData = yaml.load(f, Loader=yaml.FullLoader)
+        mappings = yaml.load(f, Loader=yaml.FullLoader)
 
-    mappings = ymlData['public']
     repository = image.split(":")[0]
     tag = image.split(":")[1]
 
