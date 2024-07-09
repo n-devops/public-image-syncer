@@ -20,7 +20,7 @@ if __name__ == '__main__':
     mapping = mappings[repository]
     transferImage = mapping['transfer'] + ":" + tag
     transferImagesYaml = '"' + image + '":\n  - ' + mapping['transfer']
-    privateImagesYaml = f'# {image}\n"{transferImage}":\n  - {mapping['private']}'
+    privateImagesYaml = f'# {image}\n"{transferImage}":\n  - {mapping.get('private')}'
 
     # 覆盖issue_images.yml
     with open("issue_images.yaml", 'w') as file:
