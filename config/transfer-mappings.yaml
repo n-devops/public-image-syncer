@@ -119,15 +119,19 @@
   private: docker-hosted.nstl-dev.com/bitnami/etcd
 
 # apache
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/kafka
 "docker.io/apache/kafka":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_kafka
   private: docker-hosted.nstl-dev.com/apache/kafka
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/apisix
 "docker.io/apache/apisix":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix
   private: docker-hosted.nstl-dev.com/apache/apisix
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/apisix-dashboard
 "docker.io/apache/apisix-dashboard":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix-dashboard
   private: docker-hosted.nstl-dev.com/apache/apisix-dashboard
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/apisix-ingress-controller
 "docker.io/apache/apisix-ingress-controller":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix-ingress-controller
   private: docker-hosted.nstl-dev.com/apache/apisix-ingress-controller
