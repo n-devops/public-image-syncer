@@ -113,6 +113,12 @@
 "docker.io/provectuslabs/kafka-ui":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_provectuslabs_kafka-ui
   private: docker-hosted.nstl-dev.com/provectuslabs/kafka-ui
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/prom/prometheus
+"docker.io/prom/prometheus":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_prom_prometheus
+  private: docker-hosted.nstl-dev.com/prom/prometheus
+
+# bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
 "docker.io/bitnami/etcd":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_etcd
