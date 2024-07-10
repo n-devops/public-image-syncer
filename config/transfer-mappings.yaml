@@ -117,6 +117,14 @@
 "docker.io/prom/prometheus":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_prom_prometheus
   private: docker-hosted.nstl-dev.com/prom/prometheus
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/sphinxdoc/sphinx
+"docker.io/sphinxdoc/sphinx":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx
+  private: docker-hosted.nstl-dev.com/sphinxdoc/sphinx
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/sphinxdoc/sphinx-latexpdf
+"docker.io/sphinxdoc/sphinx-latexpdf":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx-latexpdf
+  private: docker-hosted.nstl-dev.com/sphinxdoc/sphinx-latexpdf
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
