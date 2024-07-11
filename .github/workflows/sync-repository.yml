@@ -20,6 +20,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: generate images.yaml
+        run: |
+          python hack/generate_images.py
+          
+          echo "---------------------------------------transfer-images.yaml"
+          cat transfer-images.yaml
+          
+          echo ""
+          echo "---------------------------------------private-images.yaml"
+          cat private-images.yaml
+
+      - uses: manyuanrong/setup-ossutil@v2.0
+        with:
+          endpoint: "oss-cn-beijing.aliyuncs.com"
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+      - run: |
+          ossutil cp -f transfer-images.yaml oss://${{ secrets.OSS_BUCKET }}/
+          ossutil cp -f private-images.yaml oss://${{ secrets.OSS_BUCKET }}/
+          ossutil ls oss://${{ secrets.OSS_BUCKET }}
+
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
         env:
