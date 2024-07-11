@@ -93,10 +93,54 @@ adoptopenjdk-openjdk11-common:
 adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
 
+sphinx-latexpdf-common:
+    FROM python:slim
+    ARG sphinxVersion='7.3.7'
+    ARG extTag=$sphinxVersion-n-ext
+    LABEL org.opencontainers.image.version=$sphinxVersion
+    WORKDIR /docs
+
+    RUN apt-get update \
+     && apt-get install --no-install-recommends --yes \
+          graphviz \
+          imagemagick \
+          make \
+          git \
+          mercurial \
+          xzdec \
+          \
+          latexmk \
+          lmodern \
+          fonts-freefont-otf \
+          texlive-latex-recommended \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-lang-cjk \
+          texlive-lang-chinese \
+          texlive-lang-japanese \
+          texlive-luatex \
+          texlive-xetex \
+          texlive-full \
+          xindy \
+          tex-gyre \
+     && apt-get autoremove \
+     && apt-get clean \
+     && rm -rf /var/lib/apt/lists/*
+
+    RUN python3 -m pip install --no-cache-dir --upgrade pip \
+     && python3 -m pip install --no-cache-dir Sphinx==$sphinxVersion Pillow
+     && python3 -m pip install --no-cache-dir sphinx sphinx-rtd-theme PyYAML
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx-latexpdf:$extTag
+
+sphinx:
+    BUILD +sphinx-latexpdf-common --sphinxVersion='7.3.7'
+
 all:
     BUILD +teamcity-agent
     BUILD +elasticsearch
     BUILD +adoptopenjdk-openjdk11
+    BUILD +sphinx
 
 sync:
     FROM scratch
