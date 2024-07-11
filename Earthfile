@@ -142,5 +142,8 @@ all:
     BUILD +adoptopenjdk-openjdk11
     BUILD +sphinx
 
+specified:
+    BUILD +sphinx
+
 sync:
     FROM scratch
