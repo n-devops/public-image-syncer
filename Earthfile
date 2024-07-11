@@ -101,7 +101,7 @@ sphinx-latexpdf-common:
     WORKDIR /docs
 
     RUN apt-get update \
-     && apt-get install --no-install-recommends --yes \
+        && apt-get install --no-install-recommends --yes \
           graphviz \
           imagemagick \
           make \
@@ -124,13 +124,13 @@ sphinx-latexpdf-common:
           texlive-full \
           xindy \
           tex-gyre \
-     && apt-get autoremove \
-     && apt-get clean \
-     && rm -rf /var/lib/apt/lists/*
+        && apt-get autoremove \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
 
     RUN python3 -m pip install --no-cache-dir --upgrade pip \
-     && python3 -m pip install --no-cache-dir Sphinx==$sphinxVersion Pillow
-     && python3 -m pip install --no-cache-dir sphinx sphinx-rtd-theme PyYAML
+        && python3 -m pip install --no-cache-dir Sphinx==$sphinxVersion Pillow
+        && python3 -m pip install --no-cache-dir sphinx sphinx-rtd-theme PyYAML
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx-latexpdf:$extTag
 
 sphinx:
