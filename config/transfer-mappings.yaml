@@ -1,41 +1,41 @@
 # 官方镜像
-# Tag list: https://explore.ggcr.dev/?repo=consul
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/consul
 "docker.io/library/consul":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_consul
   private: docker-hosted.nstl-dev.com/library/consul
-# Tag list: https://explore.ggcr.dev/?repo=eclipse-temurin
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/eclipse-temurin
 "docker.io/library/eclipse-temurin":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin
   private: docker-hosted.nstl-dev.com/library/eclipse-temurin
-# Tag list: https://explore.ggcr.dev/?repo=nginx
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/nginx
 "docker.io/library/nginx":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_nginx
   private: docker-hosted.nstl-dev.com/library/nginx
-# Tag list: https://explore.ggcr.dev/?repo=redis
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/redis
 "docker.io/library/redis":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_redis
   private: docker-hosted.nstl-dev.com/library/redis
-# Tag list: https://explore.ggcr.dev/?repo=mariadb
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/mariadb
 "docker.io/library/mariadb":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb
   private: docker-hosted.nstl-dev.com/library/mariadb
-# Tag list: https://explore.ggcr.dev/?repo=solr
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/solr
 "docker.io/library/solr":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_solr
   private: docker-hosted.nstl-dev.com/library/solr
-# Tag list: https://explore.ggcr.dev/?repo=zookeeper
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/zookeeper
 "docker.io/library/zookeeper":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_zookeeper
   private: docker-hosted.nstl-dev.com/library/zookeeper
-# Tag list: https://explore.ggcr.dev/?repo=rabbitmq
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/rabbitmq
 "docker.io/library/rabbitmq":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_rabbitmq
   private: docker-hosted.nstl-dev.com/library/rabbitmq
-# Tag list: https://explore.ggcr.dev/?repo=mongo
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/mongo
 "docker.io/library/mongo":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo
   private: docker-hosted.nstl-dev.com/library/mongo
-# Tag list: https://explore.ggcr.dev/?repo=mysql
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/mysql
 "docker.io/library/mysql":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mysql
   private: docker-hosted.nstl-dev.com/library/mysql
