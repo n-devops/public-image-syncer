@@ -7,6 +7,3 @@
 # docker.io/adoptopenjdk/openjdk11
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11
-# docker.io/sphinxdoc/sphinx-latexpdf
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx-latexpdf:/^(.*)(-n-ext)$/":
-  private: docker-hosted.nstl-dev.com/sphinxdoc/sphinx-latexpdf
