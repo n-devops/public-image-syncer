@@ -39,6 +39,10 @@
 "docker.io/library/mysql":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mysql
   private: docker-hosted.nstl-dev.com/library/mysql
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/busybox
+"docker.io/library/busybox":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_busybox
+  private: docker-hosted.nstl-dev.com/library/busybox
 
 # elastic 镜像比较特殊, 转存到官方镜像库中
 # Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/elasticsearch/elasticsearch
