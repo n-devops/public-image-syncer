@@ -133,6 +133,10 @@
 "docker.io/sphinxdoc/sphinx-latexpdf":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx-latexpdf
   private: docker-hosted.nstl-dev.com/sphinxdoc/sphinx-latexpdf
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/clamav/clamav
+"docker.io/clamav/clamav":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_clamav_clamav
+  private: docker-hosted.nstl-dev.com/clamav/clamav
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
