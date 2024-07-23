@@ -137,6 +137,10 @@
 "docker.io/clamav/clamav":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_clamav_clamav
   private: docker-hosted.nstl-dev.com/clamav/clamav
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/milvusdb/milvus
+"docker.io/milvusdb/milvus":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_milvusdb_milvus
+  private: docker-hosted.nstl-dev.com/milvusdb/milvus
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
@@ -225,3 +229,7 @@
 "quay.io/openshift-scale/etcd-perf":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_openshift-scale_etcd-perf
   private: docker-hosted.nstl-dev.com/openshift-scale/etcd-perf
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/coreos/etcd
+"quay.io/coreos/etcd":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_coreos_etcd
+  private: docker-hosted.nstl-dev.com/coreos/etcd

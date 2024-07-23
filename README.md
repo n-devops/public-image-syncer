@@ -36,10 +36,12 @@
        -> docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11:latest </br>
 
 2. ghcr.io镜像 </br>
-    a. kube-vip: </br>
-       -> ghcr.io/kube-vip/kube-vip:v0.5.0 </br>
-       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip:latest </br>
-       -> docker-hosted.nstl-dev.com/ghcr.io/kube-vip/kube-vip:v0.5.0 </br>
+    a. ghcr.io/kube-vip/kube-vip:v0.5.0 </br>
+       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip:v0.5.0 </br>
+       -> docker-hosted.nstl-dev.com/kube-vip/kube-vip:v0.5.0 </br>
+    b. ghcr.io/coreos/etcd:v3.5.5 </br>
+       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_coreos_etcd:v3.5.5 </br>
+       -> docker-hosted.nstl-dev.com/coreos/etcd:v3.5.5 </br>
 
 3. registry.k8s.io k8s 镜像特殊处理: </br>
     a. 映射至私有仓库google_containers项目下: </br>
