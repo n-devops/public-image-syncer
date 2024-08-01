@@ -233,3 +233,17 @@
 "quay.io/coreos/etcd":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_coreos_etcd
   private: docker-hosted.nstl-dev.com/coreos/etcd
+
+# docker.getcollate.io
+# Tag list: https://explore.ggcr.dev/?repo=docker.getcollate.io/openmetadata/server
+"docker.getcollate.io/openmetadata/server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.getcollate.io_openmetadata_server
+  private: docker-hosted.nstl-dev.com/openmetadata/server
+# Tag list: https://explore.ggcr.dev/?repo=docker.getcollate.io/openmetadata/ingestion
+"docker.getcollate.io/openmetadata/ingestion":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.getcollate.io_openmetadata_ingestion
+  private: docker-hosted.nstl-dev.com/openmetadata/ingestion
+# Tag list: https://explore.ggcr.dev/?repo=docker.getcollate.io/openmetadata/db
+"docker.getcollate.io/openmetadata/db":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.getcollate.io_openmetadata_db
+  private: docker-hosted.nstl-dev.com/openmetadata/db
