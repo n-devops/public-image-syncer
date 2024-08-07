@@ -195,6 +195,23 @@
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-graph-studio
   private: docker-hosted.nstl-dev.com/vesoft/nebula-graph-studio
 
+# openmetadata
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/openmetadata/server
+"docker.io/openmetadata/server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openmetadata_server
+  private: docker-hosted.nstl-dev.com/openmetadata/server
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/openmetadata/ingestion
+"docker.io/openmetadata/ingestion":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openmetadata_ingestion
+  private: docker-hosted.nstl-dev.com/openmetadata/ingestion
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/openmetadata/db
+"docker.io/openmetadata/db":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openmetadata_db
+  private: docker-hosted.nstl-dev.com/openmetadata/db
+"docker.io/openmetadata/postgresql":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openmetadata_postgresql
+  private: docker-hosted.nstl-dev.com/openmetadata/postgresql
+
 # registry.k8s.io 镜像
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-apiserver
 "registry.k8s.io/kube-apiserver":
