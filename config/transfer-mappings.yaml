@@ -45,7 +45,7 @@
   private: docker-hosted.nstl-dev.com/library/busybox
 
 # docker.elastic.co 与 docker.io 共用一份存储库
-# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/busybox
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/elasticsearch
 "docker.io/library/elasticsearch":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch
   private: docker-hosted.nstl-dev.com/library/elasticsearch
@@ -57,7 +57,7 @@
 "docker.elastic.co/logstash/logstash":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_logstash
   private: docker-hosted.nstl-dev.com/logstash/logstash
-# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/kibana/kibana
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/kibana
 "docker.io/library/kibana":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana
   private: docker-hosted.nstl-dev.com/library/kibana
@@ -257,3 +257,7 @@
 "quay.io/coreos/etcd":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_coreos_etcd
   private: docker-hosted.nstl-dev.com/coreos/etcd
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/tigera/operator
+"quay.io/tigera/operator":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_tigera_operator
+  private: docker-hosted.nstl-dev.com/tigera/operator
