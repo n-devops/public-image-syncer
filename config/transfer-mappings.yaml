@@ -44,23 +44,30 @@
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_busybox
   private: docker-hosted.nstl-dev.com/library/busybox
 
-# elastic 镜像比较特殊, 转存到官方镜像库中
+# docker.elastic.co 与 docker.io 共用一份存储库
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/busybox
+"docker.io/library/elasticsearch":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch
+  private: docker-hosted.nstl-dev.com/library/elasticsearch
 # Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/elasticsearch/elasticsearch
 "docker.elastic.co/elasticsearch/elasticsearch":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch
-  private: docker-hosted.nstl-dev.com/library/elasticsearch
+  private: docker-hosted.nstl-dev.com/elasticsearch/elasticsearch
 # Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/logstash/logstash
 "docker.elastic.co/logstash/logstash":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_logstash
-  private: docker-hosted.nstl-dev.com/library/logstash
+  private: docker-hosted.nstl-dev.com/logstash/logstash
 # Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/kibana/kibana
-"docker.elastic.co/kibana/kibana":
+"docker.io/library/kibana":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana
   private: docker-hosted.nstl-dev.com/library/kibana
+"docker.elastic.co/kibana/kibana":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana
+  private: docker-hosted.nstl-dev.com/kibana/kibana
 # Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/beats/filebeat
 "docker.elastic.co/beats/filebeat":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_filebeat
-  private: docker-hosted.nstl-dev.com/library/filebeat
+  private: docker-hosted.nstl-dev.com/beats/filebeat
 
 # calico
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/calico/cni

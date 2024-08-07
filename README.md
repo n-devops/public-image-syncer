@@ -54,24 +54,7 @@
        -> docker-hosted.nstl-dev.com/google_containers/coredns:latest </br>
     c. kubeadm 使用时 --image-repository docker-hosted.nstl-dev.com/google_containers </br>
 
-4. docker.elastic.co 镜像特殊处理, DockerHub上elastic的镜像不全, 只有几个最新版本的镜像: </br>
-    a. elasticsearch: </br>
-       -> docker.elastic.co/elasticsearch/elasticsearch  </br>
-       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch  </br>
-       -> docker-hosted.nstl-dev.com/library/elasticsearch </br>
-    b. logstash: </br>
-       -> docker.elastic.co/logstash/logstash </br>
-       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_logstash </br>
-       -> docker-hosted.nstl-dev.com/library/logstash </br>
-    c. kibana: </br>
-       -> docker.elastic.co/kibana/kibana </br>
-       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana </br>
-       -> docker-hosted.nstl-dev.com/library/kibana </br>
-    d. filebeat: </br>
-       -> docker.elastic.co/beats/filebeat </br>
-       -> registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_filebeat </br>
-       -> docker-hosted.nstl-dev.com/library/filebeat </br>
-
+4. docker.elastic.co 镜像与DockerHub上的镜像放在同一个中转库中, 但是到私服会分清路径, DockerHub上elastic的镜像不全, 只有几个最新版本的镜像: </br>
 5. 自定义的公共镜像的拓展镜像, 使用[transfer-mappings.yaml](config/transfer-mappings.yaml)规则文件中的描述, 映射成相应的镜像
 
 @formatter:on
