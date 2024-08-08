@@ -43,6 +43,10 @@
 "docker.io/library/busybox":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_busybox
   private: docker-hosted.nstl-dev.com/library/busybox
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/kong
+"docker.io/library/kong":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kong
+  private: docker-hosted.nstl-dev.com/library/kong
 
 # docker.elastic.co 与 docker.io 共用一份存储库
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/library/elasticsearch
@@ -194,6 +198,23 @@
 "docker.io/vesoft/nebula-graph-studio":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-graph-studio
   private: docker-hosted.nstl-dev.com/vesoft/nebula-graph-studio
+
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/kubernetesui/dashboard-api
+"docker.io/kubernetesui/dashboard-api":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kubernetesui_dashboard-api
+  private: docker-hosted.nstl-dev.com/kubernetesui/dashboard-api
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/kubernetesui/dashboard-auth
+"docker.io/kubernetesui/dashboard-auth":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kubernetesui_dashboard-auth
+  private: docker-hosted.nstl-dev.com/kubernetesui/dashboard-auth
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/kubernetesui/dashboard-metrics-scraper
+"docker.io/kubernetesui/dashboard-metrics-scraper":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kubernetesui_dashboard-metrics-scraper
+  private: docker-hosted.nstl-dev.com/kubernetesui/dashboard-metrics-scraper
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/kubernetesui/dashboard-web
+"docker.io/kubernetesui/dashboard-web":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_kubernetesui_dashboard-web
+  private: docker-hosted.nstl-dev.com/kubernetesui/dashboard-web
 
 # openmetadata
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/openmetadata/server
