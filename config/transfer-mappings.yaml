@@ -152,6 +152,10 @@
 "docker.io/milvusdb/milvus":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_milvusdb_milvus
   private: docker-hosted.nstl-dev.com/milvusdb/milvus
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/nacos/nacos-server
+"docker.io/nacos/nacos-server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_nacos_nacos-server
+  private: docker-hosted.nstl-dev.com/nacos/nacos-server
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
