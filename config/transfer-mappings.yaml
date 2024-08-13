@@ -47,6 +47,10 @@
 "docker.io/library/kong":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kong
   private: docker-hosted.nstl-dev.com/library/kong
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/neo4j
+"docker.io/library/neo4j":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_neo4j
+  private: docker-hosted.nstl-dev.com/library/neo4j
 
 # docker.elastic.co 与 docker.io 共用一份存储库
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/library/elasticsearch
