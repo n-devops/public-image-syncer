@@ -275,6 +275,16 @@
   transfer: registry.cn-beijing.aliyuncs.com/nstl_google_containers/pause
   private: docker-hosted.nstl-dev.com/google_containers/pause
 
+# registry.k8s.io 机构镜像
+# Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/ingress-nginx/kube-webhook-certgen
+"registry.k8s.io/ingress-nginx/kube-webhook-certgen":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_ingress-nginx_kube-webhook-certgen
+  private: docker-hosted.nstl-dev.com/ingress-nginx/kube-webhook-certgen
+# Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/ingress-nginx/controller
+"registry.k8s.io/ingress-nginx/controller":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_ingress-nginx_controller
+  private: docker-hosted.nstl-dev.com/ingress-nginx/controller
+
 # ghcr.io
 # Tag list: https://explore.ggcr.dev/?repo=ghcr.io/kube-vip/kube-vip
 "ghcr.io/kube-vip/kube-vip":
