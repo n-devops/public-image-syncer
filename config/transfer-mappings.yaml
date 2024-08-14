@@ -76,6 +76,10 @@
 "docker.elastic.co/beats/filebeat":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_filebeat
   private: docker-hosted.nstl-dev.com/beats/filebeat
+# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/eck/eck-operator
+"docker.elastic.co/eck/eck-operator":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.elastic.co_eck_eck-operator
+  private: docker-hosted.nstl-dev.com/eck/eck-operator
 
 # calico
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/calico/cni
