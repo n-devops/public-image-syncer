@@ -69,6 +69,7 @@
 "docker.io/library/kibana":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana
   private: docker-hosted.nstl-dev.com/library/kibana
+# Tag list: https://explore.ggcr.dev/?repo=docker.elastic.co/kibana/kibana
 "docker.elastic.co/kibana/kibana":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_kibana
   private: docker-hosted.nstl-dev.com/kibana/kibana
@@ -172,6 +173,10 @@
 "docker.io/containous/whoami":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_containous_whoami
   private: docker-hosted.nstl-dev.com/containous/whoami
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/redislabs/redisinsight
+"docker.io/redislabs/redisinsight":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_redislabs_redisinsight
+  private: docker-hosted.nstl-dev.com/redislabs/redisinsight
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
