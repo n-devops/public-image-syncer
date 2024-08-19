@@ -45,17 +45,25 @@ teamcity-agent:
     BUILD +teamcity-agent-common --tag='2024.03.3'
 
 # elasticsearch
-elasticsearch-common:
+elasticsearch-7:
     ARG tag='7.6.2'
     ARG extTag=$tag-n-ext
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_HANLP="https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v$tag/elasticsearch-analysis-hanlp-$tag.zip"
     RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_HANLP}"
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:$extTag
+elasticsearch-8:
+    ARG tag='8.14.2'
+    ARG extTag=$tag-n-ext
+    FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
+    ENV URL_IK="https://get.infini.cloud/elasticsearch/analysis-ik/$tag"
+    RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_IK}"
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:$extTag
 
 elasticsearch:
-    BUILD +elasticsearch-common --tag='7.6.2'
-    BUILD +elasticsearch-common --tag='7.10.2'
+    BUILD +elasticsearch-8 --tag='8.14.2'
+    BUILD +elasticsearch-8 --tag='8.14.3'
+    BUILD +elasticsearch-8 --tag='8.15.0'
 
 # adoptopenjdk
 adoptopenjdk-openjdk11-common:
@@ -143,7 +151,7 @@ all:
     BUILD +sphinx
 
 specified:
-    BUILD +sphinx
+    BUILD +elasticsearch
 
 sync:
     FROM scratch
