@@ -1,6 +1,6 @@
 # docker.io/elasticsearch
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:/^(.*)(-n-ext)$/":
-  private: docker-hosted.nstl-dev.com/library/elasticsearch
+  private: docker-hosted.nstl-dev.com/elasticsearch/elasticsearch
 # docker.io/jetbrains/teamcity-agent
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/jetbrains/teamcity-agent
