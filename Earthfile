@@ -57,7 +57,7 @@ elasticsearch-8:
     ARG extTag=$tag-n-ext
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_IK="https://get.infini.cloud/elasticsearch/analysis-ik/$tag"
-    RUN sh -c "/bin/echo -e y | sh /usr/share/elasticsearch/bin/elasticsearch-plugin install ${URL_IK}"
+    RUN sh -c "sh /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch ${URL_IK}"
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:$extTag
 
 elasticsearch:
