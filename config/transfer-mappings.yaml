@@ -183,6 +183,10 @@
 "docker.io/bitnami/etcd":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_etcd
   private: docker-hosted.nstl-dev.com/bitnami/etcd
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/zookeeper
+"docker.io/bitnami/zookeeper":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_zookeeper
+  private: docker-hosted.nstl-dev.com/bitnami/zookeeper
 
 # apache
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/kafka
