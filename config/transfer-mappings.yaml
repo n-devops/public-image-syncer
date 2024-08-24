@@ -177,6 +177,14 @@
 "docker.io/redislabs/redisinsight":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_redislabs_redisinsight
   private: docker-hosted.nstl-dev.com/redislabs/redisinsight
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/canal/canal-admin
+"docker.io/canal/canal-admin":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-admin
+  private: docker-hosted.nstl-dev.com/canal/canal-admin
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/canal/canal-serve
+"docker.io/canal/canal-server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-serve
+  private: docker-hosted.nstl-dev.com/canal/canal-serve
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
