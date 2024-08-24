@@ -187,6 +187,10 @@
 "docker.io/bitnami/zookeeper":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_zookeeper
   private: docker-hosted.nstl-dev.com/bitnami/zookeeper
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/kafka
+"docker.io/bitnami/kafka":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_kafka
+  private: docker-hosted.nstl-dev.com/bitnami/kafka
 
 # apache
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/kafka
