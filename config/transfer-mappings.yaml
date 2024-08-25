@@ -187,6 +187,10 @@
   private: docker-hosted.nstl-dev.com/canal/canal-server
 
 # bitnami
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/os-shell
+"docker.io/bitnami/os-shell":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_os-shell
+  private: docker-hosted.nstl-dev.com/bitnami/os-shell
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/etcd
 "docker.io/bitnami/etcd":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_etcd
