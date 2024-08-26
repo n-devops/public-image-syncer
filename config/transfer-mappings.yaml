@@ -317,6 +317,10 @@
 "registry.k8s.io/ingress-nginx/controller":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_ingress-nginx_controller
   private: docker-hosted.nstl-dev.com/ingress-nginx/controller
+# Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/metrics-server/metrics-server
+"registry.k8s.io/metrics-server/metrics-server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/registry.k8s.io_metrics-server_metrics-server
+  private: docker-hosted.nstl-dev.com/metrics-server/metrics-server
 
 # ghcr.io
 # Tag list: https://explore.ggcr.dev/?repo=ghcr.io/kube-vip/kube-vip
