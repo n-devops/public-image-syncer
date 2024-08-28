@@ -80,8 +80,8 @@ jobs:
           ./bin/image-syncer --auth=./config/auth.yaml --images=./issue_images.yaml --proc=10 --retries=2 2>&1 | grep -v "Auth information not found" | grep -v "Finish synchronizing blob sha256:"
 
       - run: ./bin/ossutil config -e oss-cn-beijing.aliyuncs.com -i ${OSS_ACCESS_KEY_SECRET} -k ${OSS_ACCESS_KEY_SECRET} -L CH -c ossutilconfig
-      - run: ossutil cp -f target_images_${{ github.event.issue.number }}.yaml oss://${{ secrets.OSS_BUCKET }}/
-      - run: ossutil ls oss://${{ secrets.OSS_BUCKET }}
+      - run: ./bin/ossutil -c ossutilconfig cp -f target_images_${{ github.event.issue.number }}.yaml oss://${{ secrets.OSS_BUCKET }}/
+      - run: ./bin/ossutil -c ossutilconfig ls oss://${{ secrets.OSS_BUCKET }}
 
       - name: Sync Images
         run: |
