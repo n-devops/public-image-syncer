@@ -66,12 +66,12 @@ jobs:
           cat target_images_${{ github.event.issue.number }}.yaml
 
       - name: Image Sync Action
-        with:
-          auth_file: ./config/auth.yaml
-          images_file: ./issue_images.yaml
-          proc: 10
-          # stderr 重定向至 stdout
-          append_script: '2>&1 | grep -v "Auth information not found" | grep -v "Finish synchronizing blob sha256:"'
+#        with:
+#          auth_file: ./config/auth.yaml
+#          images_file: ./issue_images.yaml
+#          proc: 10
+#          # stderr 重定向至 stdout
+#          append_script: '2>&1 | grep -v "Auth information not found" | grep -v "Finish synchronizing blob sha256:"'
         env:
           ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}
           ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}
