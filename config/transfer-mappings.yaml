@@ -185,6 +185,14 @@
 "docker.io/canal/canal-server":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-server
   private: docker-hosted.nstl-dev.com/canal/canal-server
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/canal/canal-admin
+"docker.io/zhaobingshuang/canal-admin":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-admin
+  private: docker-hosted.nstl-dev.com/canal/canal-admin
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/canal/canal-server
+"docker.io/zhaobingshuang/canal-server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-server
+  private: docker-hosted.nstl-dev.com/canal/canal-server
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/os-shell
