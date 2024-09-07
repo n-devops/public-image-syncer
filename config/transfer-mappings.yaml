@@ -185,7 +185,7 @@
 "docker.io/canal/canal-server":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-server
   private: docker-hosted.nstl-dev.com/canal/canal-server
-# Tag list: https://explore.ggcr.dev/?repo=docker.io/canal/canal-admin
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/zhaobingshuang/canal-admin
 "docker.io/zhaobingshuang/canal-admin":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-admin
   private: docker-hosted.nstl-dev.com/canal/canal-admin
@@ -349,3 +349,7 @@
 "quay.io/tigera/operator":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_tigera_operator
   private: docker-hosted.nstl-dev.com/tigera/operator
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/minio/operator
+"quay.io/minio/operator":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_minio_operator
+  private: docker-hosted.nstl-dev.com/minio/operator
