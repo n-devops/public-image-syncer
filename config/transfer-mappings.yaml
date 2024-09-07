@@ -353,3 +353,7 @@
 "quay.io/minio/operator":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_minio_operator
   private: docker-hosted.nstl-dev.com/minio/operator
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/minio/operator-sidecar
+"quay.io/minio/operator-sidecar":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_minio_operator-sidecar
+  private: docker-hosted.nstl-dev.com/minio/operator-sidecar
