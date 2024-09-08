@@ -117,7 +117,7 @@ flink-common:
      && wget -O /opt/flink/plugins/s3-fs-presto/flink-s3-fs-presto-1.20.0.jar \
         https://repo1.maven.org/maven2/org/apache/flink/flink-s3-fs-presto/1.20.0/flink-s3-fs-presto-1.20.0.jar
 
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:tag
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:$tag
 
 flink:
     BUILD +flink-common --tag='1.20.0-scala_2.12-java17'
