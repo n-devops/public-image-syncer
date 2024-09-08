@@ -369,3 +369,7 @@
 "quay.io/minio/kes":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_minio_kes
   private: docker-hosted.nstl-dev.com/minio/kes
+# Tag list: https://explore.ggcr.dev/?repo=ghcr.io/apache/flink-kubernetes-operator
+"ghcr.io/apache/flink-kubernetes-operator":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_apache_flink-kubernetes-operator
+  private: docker-hosted.nstl-dev.com/apache/flink-kubernetes-operator
