@@ -18,6 +18,11 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-sync-images
       cancel-in-progress: true
+    env:
+      ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}
+      ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}
+      OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+      OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,25 +38,19 @@ jobs:
           echo "---------------------------------------private-images.yaml"
           cat private-images.yaml
 
-      - uses: manyuanrong/setup-ossutil@v2.0
-        with:
-          endpoint: "oss-cn-beijing.aliyuncs.com"
-          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
       - run: |
-          ossutil cp -f transfer-images.yaml oss://${{ secrets.OSS_BUCKET }}/
-          ossutil cp -f private-images.yaml oss://${{ secrets.OSS_BUCKET }}/
-          ossutil ls oss://${{ secrets.OSS_BUCKET }}
+          ./bin/ossutil config -e oss-cn-beijing.aliyuncs.com -i ${OSS_ACCESS_KEY_ID} -k ${OSS_ACCESS_KEY_SECRET} -L CH -c ossutilconfig
+          ./bin/ossutil -c ossutilconfig cp -f transfer-images.yaml oss://${{ secrets.OSS_BUCKET }}/
+          ./bin/ossutil -c ossutilconfig cp -f private-images.yaml oss://${{ secrets.OSS_BUCKET }}/
+          ./bin/ossutil -c ossutilconfig ls oss://${{ secrets.OSS_BUCKET }}
 
       - name: Image Sync Action
-        uses: n-devops/image-sync-action@v1.1.2
-        with:
-          auth_file: ./config/auth.yaml
-          images_file: transfer-images.yaml
-          version: latest
-          proc: 10
-          # stderr 重定向至 stdout
-          append_script: '2>&1 | grep -v "Auth information not found" | grep -v "Finish synchronizing blob sha256:"'
-        env:
-          ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}
-          ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD: ${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}
+        run: |
+          ./bin/image-syncer --auth=./config/auth.yaml --images=./transfer-images.yaml --proc=10 --retries=2 2>&1 | grep -v "Auth information not found" | grep -v "Finish synchronizing blob sha256:" |tee temp_target_images.log
+          if [ -f "temp_target_images.log" ]; then
+            output=$(cat temp_target_images.log)
+            if [[ $output == *"failed tasks exist"* ]]; then
+              echo "执行失败, 退出并打印错误"
+              exit 1
+            fi
+          fi
