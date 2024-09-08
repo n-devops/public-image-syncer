@@ -121,14 +121,13 @@ flink-cdc-common:
 flink-cdc:
     BUILD +flink-cdc-common --tag='1.20.0-scala_2.12-java17'
 
-
 all:
     BUILD +teamcity-agent
     BUILD +elasticsearch
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +elasticsearch
+    BUILD +flink-cdc
 
 sync:
     FROM scratch
