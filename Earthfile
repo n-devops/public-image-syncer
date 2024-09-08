@@ -97,58 +97,35 @@ adoptopenjdk-openjdk11-common:
      && rm apache-skywalking-java-agent.tgz
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:$extTag
 
-
 adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
 
-sphinx-latexpdf-common:
-    FROM python:slim
-    ARG sphinxVersion='7.3.7'
-    ARG extTag=$sphinxVersion-n-ext
-    LABEL org.opencontainers.image.version=$sphinxVersion
-    WORKDIR /docs
+flink-cdc-common:
+    ARG tag='1.20.0-scala_2.12-java17'
+    ARG extTag=$tag-cdc
+    FROM docker.io/apache/flink:$tag
 
-    RUN apt-get update \
-     && apt-get install --no-install-recommends --yes \
-          graphviz \
-          imagemagick \
-          make \
-          git \
-          mercurial \
-          xzdec \
-          \
-          latexmk \
-          lmodern \
-          fonts-freefont-otf \
-          texlive-latex-recommended \
-          texlive-latex-extra \
-          texlive-fonts-recommended \
-          texlive-fonts-extra \
-          texlive-lang-cjk \
-          texlive-lang-chinese \
-          texlive-lang-japanese \
-          texlive-luatex \
-          texlive-xetex \
-          texlive-full \
-          xindy \
-          tex-gyre \
-     && apt-get autoremove \
-     && apt-get clean \
-     && rm -rf /var/lib/apt/lists/*
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+    RUN apt-get update > /dev/null 2>&1 \
+     # 安装时区包
+     && apt-get install -y tzdata > /dev/null 2>&1 \
+     # 设置时区
+     && echo $TZ > /etc/timezone
 
-    RUN python3 -m pip install --no-cache-dir --upgrade pip \
-     && python3 -m pip install --no-cache-dir Sphinx==$sphinxVersion Pillow \
-     && python3 -m pip install --no-cache-dir sphinx sphinx-rtd-theme PyYAML
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_sphinxdoc_sphinx-latexpdf:$extTag
+    ADD https://repo1.maven.org/maven2/org/apache/flink/flink-sql-connector-mysql-cdc/3.2.0/flink-sql-connector-mysql-cdc-3.2.0.jar /opt/flink/lib/
+    RUN ls -la /opt/flink/lib
 
-sphinx:
-    BUILD +sphinx-latexpdf-common --sphinxVersion='7.3.7'
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:$extTag
+
+flink-cdc:
+    BUILD +flink-cdc-common --tag='1.20.0-scala_2.12-java17'
+
 
 all:
     BUILD +teamcity-agent
     BUILD +elasticsearch
     BUILD +adoptopenjdk-openjdk11
-    BUILD +sphinx
 
 specified:
     BUILD +elasticsearch
