@@ -111,12 +111,13 @@ flink-cdc-common:
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
      # 设置时区
-     && echo $TZ > /etc/timezone
+     && echo $TZ > /etc/timezone \
+     # 创建 s3 插件目录
+     && mkdir -p /opt/flink/plugins/s3-fs-presto \
+     && wget -O /opt/flink/plugins/s3-fs-presto/flink-s3-fs-presto-1.20.0.jar \
+        https://repo1.maven.org/maven2/org/apache/flink/flink-s3-fs-presto/1.20.0/flink-s3-fs-presto-1.20.0.jar
 
-    ADD https://repo1.maven.org/maven2/org/apache/flink/flink-sql-connector-mysql-cdc/3.2.0/flink-sql-connector-mysql-cdc-3.2.0.jar /opt/flink/lib/
-    RUN ls -la /opt/flink/lib
-
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:$extTag
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:tag
 
 flink-cdc:
     BUILD +flink-cdc-common --tag='1.20.0-scala_2.12-java17'
