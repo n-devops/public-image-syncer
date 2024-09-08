@@ -52,9 +52,9 @@
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_neo4j
   private: docker-hosted.nstl-dev.com/library/neo4j
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/library/flink
-"docker.io/library/flink":
-  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink
-  private: docker-hosted.nstl-dev.com/library/flink
+#"docker.io/library/flink":
+#  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink
+#  private: docker-hosted.nstl-dev.com/library/flink
 
 # docker.elastic.co 与 docker.io 共用一份存储库
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/library/elasticsearch
