@@ -101,8 +101,8 @@ adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
 
 flink-common:
-    ARG tag='1.20.0-scala_2.12-java17'
-    ARG extTag=$tag-cdc
+    ARG version='1.20.0'
+    ARG tag=$version-scala_2.12-java17
     FROM docker.io/apache/flink:$tag
 
     #设置时区环境
@@ -114,13 +114,15 @@ flink-common:
      && echo $TZ > /etc/timezone \
      # 创建 s3 插件目录
      && mkdir -p /opt/flink/plugins/s3-fs-presto \
-     && wget -O /opt/flink/plugins/s3-fs-presto/flink-s3-fs-presto-1.20.0.jar \
-        https://repo1.maven.org/maven2/org/apache/flink/flink-s3-fs-presto/1.20.0/flink-s3-fs-presto-1.20.0.jar
+     && wget -O /opt/flink/plugins/s3-fs-presto/flink-s3-fs-presto-$version.jar \
+        https://repo1.maven.org/maven2/org/apache/flink/flink-s3-fs-presto/$version/flink-s3-fs-presto-$version.jar
 
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:$tag
 
 flink:
-    BUILD +flink-common --tag='1.20.0-scala_2.12-java17'
+    BUILD +flink-common --version='1.20.0'
+    BUILD +flink-common --version='1.19.1'
+    BUILD +flink-common --version='1.18.1'
 
 all:
     BUILD +teamcity-agent
