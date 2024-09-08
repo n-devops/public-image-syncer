@@ -8,5 +8,5 @@
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11
 # docker.io/library/flink
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:/^(.*)(-n-ext)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:/^(.*)$/":
   private: docker-hosted.nstl-dev.com/library/flink
