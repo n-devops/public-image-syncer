@@ -100,7 +100,7 @@ adoptopenjdk-openjdk11-common:
 adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
 
-flink-cdc-common:
+flink-common:
     ARG tag='1.20.0-scala_2.12-java17'
     ARG extTag=$tag-cdc
     FROM docker.io/apache/flink:$tag
@@ -119,8 +119,8 @@ flink-cdc-common:
 
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:tag
 
-flink-cdc:
-    BUILD +flink-cdc-common --tag='1.20.0-scala_2.12-java17'
+flink:
+    BUILD +flink-common --tag='1.20.0-scala_2.12-java17'
 
 all:
     BUILD +teamcity-agent
@@ -128,7 +128,7 @@ all:
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +flink-cdc
+    BUILD +flink
 
 sync:
     FROM scratch
