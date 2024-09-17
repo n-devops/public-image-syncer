@@ -57,7 +57,19 @@ elasticsearch-8:
     ARG extTag=$tag-n-ext
     FROM docker.elastic.co/elasticsearch/elasticsearch:$tag
     ENV URL_IK="https://get.infini.cloud/elasticsearch/analysis-ik/$tag"
-    RUN sh -c "sh /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch ${URL_IK}"
+    RUN sh -c "sh /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch ${URL_IK}" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-kuromoji" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-icu" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-nori" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-phonetic" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-smartcn" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-stempel" \
+        && sh -c "bin/elasticsearch-plugin install --batch analysis-ukrainian" \
+        && sh -c "bin/elasticsearch-plugin install --batch mapper-size" \
+        && sh -c "bin/elasticsearch-plugin install --batch mapper-murmur3" \
+        && sh -c "bin/elasticsearch-plugin install --batch mapper-annotated-text" \
+        && sh -c "bin/elasticsearch-plugin install --batch repository-hdfs" \
+        && sh -c "bin/elasticsearch-plugin install --batch store-smb"
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_elasticsearch:$extTag
 
 elasticsearch:
@@ -130,7 +142,7 @@ all:
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +flink
+    BUILD +elasticsearch
 
 sync:
     FROM scratch
