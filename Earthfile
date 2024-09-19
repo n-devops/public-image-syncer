@@ -136,13 +136,57 @@ flink:
     BUILD +flink-common --version='1.19.1'
     BUILD +flink-common --version='1.18.1'
 
+mariadb-common:
+    ARG version='10.3.38'
+    ARG tag=$version
+    ARG extTag=$tag-n-ext
+    FROM docker.io/library/mariadb:$tag
+
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+    RUN apt-get update > /dev/null 2>&1 \
+     # 安装时区包
+     && apt-get install -y tzdata > /dev/null 2>&1 \
+     # 设置时区
+     && echo $TZ > /etc/timezone \
+     # 清理缓存
+     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb:$extTag
+
+mariadb:
+    BUILD +mariadb-common --version='10.3.38'
+
+
+mongo-common:
+    ARG version='3.4.24'
+    ARG tag=$version
+    ARG extTag=$tag-n-ext
+    FROM docker.io/library/mongo:$tag
+
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+    RUN apt-get update > /dev/null 2>&1 \
+     # 安装时区包
+     && apt-get install -y tzdata > /dev/null 2>&1 \
+     # 设置时区
+     && echo $TZ > /etc/timezone \
+     # 清理缓存
+     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo:$extTag
+
+mongo:
+    BUILD +mongo-common --version='3.4.24'
+
 all:
     BUILD +teamcity-agent
     BUILD +elasticsearch
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +elasticsearch
+    BUILD +mariadb
+    BUILD +mongo
 
 sync:
     FROM scratch

@@ -10,3 +10,9 @@
 # docker.io/library/flink
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:/^(.*)$/":
   private: docker-hosted.nstl-dev.com/library/flink
+# docker.io/library/mariadb
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb:/^(.*)$/":
+  private: docker-hosted.nstl-dev.com/library/mariadb
+# docker.io/library/mongo
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo:/^(.*)$/":
+  private: docker-hosted.nstl-dev.com/library/mongo
