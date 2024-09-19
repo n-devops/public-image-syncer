@@ -16,3 +16,6 @@
 # docker.io/library/mongo
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo:/^(.*)$/":
   private: docker-hosted.nstl-dev.com/library/mongo
+# docker.io/bitnami/mariadb
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_mariadb:/^(.*)$/":
+  private: docker-hosted.nstl-dev.com/bitnami/mariadb

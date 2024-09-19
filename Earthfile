@@ -124,6 +124,9 @@ flink-common:
      && apt-get install -y tzdata > /dev/null 2>&1 \
      # 设置时区
      && echo $TZ > /etc/timezone \
+     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
+     # 清理缓存
+     && apt-get clean && rm -rf /var/lib/apt/lists/* \
      # 创建 s3 插件目录
      && mkdir -p /opt/flink/plugins/s3-fs-presto \
      && wget -O /opt/flink/plugins/s3-fs-presto/flink-s3-fs-presto-$version.jar \
@@ -140,7 +143,7 @@ mariadb-common:
     ARG version='10.3.38'
     ARG tag=$version
     ARG extTag=$tag-n-ext
-    FROM docker.io/library/mariadb:$tag
+    FROM docker.io/bitnami/mariadb:$tag
 
     #设置时区环境
     ENV TZ=Asia/Shanghai
@@ -149,10 +152,11 @@ mariadb-common:
      && apt-get install -y tzdata > /dev/null 2>&1 \
      # 设置时区
      && echo $TZ > /etc/timezone \
+     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
      # 清理缓存
      && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb:$extTag
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_mariadb:$extTag
 
 mariadb:
     BUILD +mariadb-common --version='10.3.38'
@@ -186,7 +190,6 @@ all:
 
 specified:
     BUILD +mariadb
-    BUILD +mongo
 
 sync:
     FROM scratch
