@@ -152,7 +152,6 @@ mariadb-common:
      && apt-get install -y tzdata > /dev/null 2>&1 \
      # 设置时区
      && echo $TZ > /etc/timezone \
-     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
      # 验证时区
      && date -R && ls -l /etc/localtime \
      # 清理缓存
