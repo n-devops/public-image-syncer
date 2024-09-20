@@ -19,3 +19,6 @@
 # docker.io/bitnami/mariadb
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_mariadb:/^(.*)$/":
   private: docker-hosted.nstl-dev.com/bitnami/mariadb
+# mycat
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:/^(.*)$/":
+  private: docker-hosted.nstl-dev.com/library/mycat

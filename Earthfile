@@ -188,13 +188,14 @@ mycat:
       https://github.com/MyCATApache/Mycat-download/raw/refs/heads/master/1.5-RELEASE/Mycat-server-1.5.1-RELEASE-20161130213509-linux.tar.gz \
      && cd /data \
      && tar -zxvf Mycat-server-linux.tar.gz \
+     && rm -rf /data/Mycat-server-linux.tar.gz \
      && ls -lna
 
     VOLUME /data/mycat/conf
     VOLUME /data/mycat/logs
     EXPOSE 8066 9066
 
-    ENTRYPOINT ["/usr/bin/tini", "--", "/bin/sh", "-c", "/data/mycat/bin/mycat console"]
+    ENTRYPOINT ["/usr/bin/tini", "--", "/bin/sh", "-c", "/data/mycat/bin/mycat start"]
 
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:$tag
 
