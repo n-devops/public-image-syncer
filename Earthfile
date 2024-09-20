@@ -160,13 +160,52 @@ mongo-common:
 mongo:
     BUILD +mongo-common --version='3.4.24'
 
+mycat:
+    ARG version='1.5.1'
+    ARG tag=$version
+    FROM adoptopenjdk/openjdk11:debian
+
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+ 
+    # 指定目录进行下载
+    WORKDIR /data
+
+    RUN apt-get update > /dev/null 2>&1 \
+     # 安装时区包
+     && apt-get install -y tzdata > /dev/null 2>&1 \
+     # 设置时区
+     && echo $TZ > /etc/timezone \
+     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
+     # 验证时区
+     && date -R && ls -l /etc/localtime \
+     # 安装wget tini
+     && apt-get install -y wget tini > /dev/null 2>&1 \
+     # 清理缓存
+     && apt-get clean && rm -rf /var/lib/apt/lists/* \
+     # 下载安装mycat
+     && wget -O /data/Mycat-server-linux.tar.gz \
+      https://github.com/MyCATApache/Mycat-download/raw/refs/heads/master/1.5-RELEASE/Mycat-server-1.5.1-RELEASE-20161130213509-linux.tar.gz \
+     && cd /data \
+     && tar -zxvf Mycat-server-linux.tar.gz \
+     && ls -lna
+
+    VOLUME /data/mycat/conf
+    VOLUME /data/mycat/logs
+    EXPOSE 8066 9066
+
+    ENTRYPOINT ["/usr/bin/tini", "--", "/bin/sh", "-c", "/data/mycat/bin/mycat console"]
+
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:$tag
+
+
 all:
     BUILD +teamcity-agent
     BUILD +elasticsearch
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +sync
+    BUILD +mycat
 
 sync:
     FROM scratch
