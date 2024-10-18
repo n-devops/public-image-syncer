@@ -343,6 +343,10 @@
 "ghcr.io/kube-vip/kube-vip":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_kube-vip_kube-vip
   private: docker-hosted.nstl-dev.com/kube-vip/kube-vip
+# Tag list: https://explore.ggcr.dev/?repo=ghcr.io/apache/flink-kubernetes-operator
+"ghcr.io/apache/flink-kubernetes-operator":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_apache_flink-kubernetes-operator
+  private: docker-hosted.nstl-dev.com/apache/flink-kubernetes-operator
 
 # quay.io
 # Tag list: https://explore.ggcr.dev/?repo=quay.io/openshift-scale/etcd-perf
@@ -373,7 +377,15 @@
 "quay.io/minio/kes":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_minio_kes
   private: docker-hosted.nstl-dev.com/minio/kes
-# Tag list: https://explore.ggcr.dev/?repo=ghcr.io/apache/flink-kubernetes-operator
-"ghcr.io/apache/flink-kubernetes-operator":
-  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_apache_flink-kubernetes-operator
-  private: docker-hosted.nstl-dev.com/apache/flink-kubernetes-operator
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/jetstack/cert-manager-cainjector
+"quay.io/jetstack/cert-manager-cainjector":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_jetstack_cert-manager-cainjector
+  private: docker-hosted.nstl-dev.com/jetstack/cert-manager-cainjector
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/jetstack/cert-manager-controller
+"quay.io/jetstack/cert-manager-controller":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_jetstack_cert-manager-controller
+  private: docker-hosted.nstl-dev.com/jetstack/cert-manager-controller
+# Tag list: https://explore.ggcr.dev/?repo=quay.io/jetstack/cert-manager-webhook
+"quay.io/jetstack/cert-manager-webhook":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/quay.io_jetstack_cert-manager-webhook
+  private: docker-hosted.nstl-dev.com/jetstack/cert-manager-webhook
