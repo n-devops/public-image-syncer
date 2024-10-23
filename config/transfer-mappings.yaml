@@ -197,6 +197,10 @@
 "docker.io/zhaobingshuang/canal-server":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_canal_canal-server
   private: docker-hosted.nstl-dev.com/canal/canal-server
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/elasticdump/elasticsearch-dump
+"docker.io/elasticdump/elasticsearch-dump":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticdump_elasticsearch-dump
+  private: docker-hosted.nstl-dev.com/elasticdump/elasticsearch-dump
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/os-shell
