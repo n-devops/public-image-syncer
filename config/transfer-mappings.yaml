@@ -241,6 +241,18 @@
 "docker.io/apache/apisix-ingress-controller":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_apisix-ingress-controller
   private: docker-hosted.nstl-dev.com/apache/apisix-ingress-controller
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/skywalking-ui
+"docker.io/apache/skywalking-ui":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_skywalking-ui
+  private: docker-hosted.nstl-dev.com/apache/skywalking-ui
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/skywalking-oap-server
+"docker.io/apache/skywalking-oap-server":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_skywalking-oap-server
+  private: docker-hosted.nstl-dev.com/apache/skywalking-oap-server
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/skywalking-java-agent
+"docker.io/apache/skywalking-java-agent":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_skywalking-java-agent
+  private: docker-hosted.nstl-dev.com/apache/skywalking-java-agent
 
 # NebulaGraph
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/vesoft/nebula-metad
