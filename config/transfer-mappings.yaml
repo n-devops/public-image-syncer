@@ -201,6 +201,10 @@
 "docker.io/elasticdump/elasticsearch-dump":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_elasticdump_elasticsearch-dump
   private: docker-hosted.nstl-dev.com/elasticdump/elasticsearch-dump
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/xuxueli/xxl-job-admin
+"docker.io/xuxueli/xxl-job-admin":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_xuxueli_xxl-job-admin
+  private: docker-hosted.nstl-dev.com/xuxueli/xxl-job-admin
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/os-shell
