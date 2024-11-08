@@ -205,6 +205,10 @@
 "docker.io/xuxueli/xxl-job-admin":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_xuxueli_xxl-job-admin
   private: docker-hosted.nstl-dev.com/xuxueli/xxl-job-admin
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/schenkd/nginx-ui
+"docker.io/schenkd/nginx-ui":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_schenkd_nginx-ui
+  private: docker-hosted.nstl-dev.com/schenkd/nginx-ui
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/os-shell
