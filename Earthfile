@@ -112,6 +112,41 @@ adoptopenjdk-openjdk11-common:
 adoptopenjdk-openjdk11:
     BUILD +adoptopenjdk-openjdk11-common --tag='debian'
 
+# eclipse-temurin
+eclipse-temurin-17-common:
+    ARG tag='17-jammy'
+    ARG extTag=$tag-n-ext
+    ARG skywalkingAgent='9.3.0'
+    FROM docker.io/library/eclipse-temurin:$tag
+
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+    ENV SKYWALKING_AGENT=$skywalkingAgent
+    # 指定目录进行下载
+    WORKDIR /data
+
+    RUN apt-get update > /dev/null 2>&1 \
+     # 安装时区包
+     && apt-get install -y tzdata > /dev/null 2>&1 \
+     # 设置时区
+     && echo $TZ > /etc/timezone \
+     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
+     # 验证时区
+     && date -R && ls -l /etc/localtime \
+     # 安装wget tini
+     && apt-get install -y wget tini > /dev/null 2>&1 \
+     # 清理缓存
+     && apt-get clean && rm -rf /var/lib/apt/lists/* \
+     # 添加 skywalking agent 到 /data/agnet目录, eg: /data/agent/skywalking-agent.jar
+     && wget -O apache-skywalking-java-agent.tgz https://archive.apache.org/dist/skywalking/java-agent/$SKYWALKING_AGENT/apache-skywalking-java-agent-$SKYWALKING_AGENT.tgz > /dev/null 2>&1 \
+     && tar -zxvf apache-skywalking-java-agent.tgz > /dev/null 2>&1 \
+     && mv skywalking-agent agent \
+     && rm apache-skywalking-java-agent.tgz
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:$extTag
+
+eclipse-temurin-17:
+    BUILD +adoptopenjdk-openjdk11-common --tag='17-jammy'
+
 flink-common:
     ARG version='1.20.0'
     ARG tag=$version-scala_2.12-java17
@@ -206,7 +241,7 @@ all:
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +mycat
+    BUILD +eclipse-temurin-17
 
 sync:
     FROM scratch
