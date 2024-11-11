@@ -145,7 +145,7 @@ eclipse-temurin-17-common:
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:$extTag
 
 eclipse-temurin-17:
-    BUILD +adoptopenjdk-openjdk11-common --tag='17-jammy'
+    BUILD +eclipse-temurin-17-common --tag='17-jammy'
 
 flink-common:
     ARG version='1.20.0'
