@@ -23,5 +23,5 @@
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:/^(.*)$/":
   private: docker-hosted.nstl-dev.com/library/mycat
 # eclipse-temurin
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:/^(.*)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/library/eclipse-temurin
