@@ -209,6 +209,10 @@
 "docker.io/uozi/nginx-ui":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_uozi_nginx-ui
   private: docker-hosted.nstl-dev.com/uozi/nginx-ui
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/zilliz/attu
+"docker.io/zilliz/attu":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_zilliz_attu
+  private: docker-hosted.nstl-dev.com/zilliz/attu
 
 # bitnami
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/os-shell
