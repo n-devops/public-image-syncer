@@ -117,6 +117,10 @@
 "docker.io/jetbrains/teamcity-agent":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent
   private: docker-hosted.nstl-dev.com/jetbrains/teamcity-agent
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/jetbrains/qodana-jvm-community
+"docker.io/jetbrains/qodana-jvm-community":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_qodana-jvm-community
+  private: docker-hosted.nstl-dev.com/jetbrains/qodana-jvm-community
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/openresty/openresty
 "docker.io/openresty/openresty":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openresty_openresty
