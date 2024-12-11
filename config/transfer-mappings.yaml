@@ -269,6 +269,10 @@
 "docker.io/apache/skywalking-java-agent":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_skywalking-java-agent
   private: docker-hosted.nstl-dev.com/apache/skywalking-java-agent
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/skywalking-banyandb
+"docker.io/apache/skywalking-banyandb":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_skywalking-banyandb
+  private: docker-hosted.nstl-dev.com/apache/skywalking-banyandb
 
 # NebulaGraph
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/vesoft/nebula-metad
