@@ -239,6 +239,11 @@
 "docker.io/bitnami/mariadb":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_mariadb
   private: docker-hosted.nstl-dev.com/bitnami/mariadb
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/bitnami/kubectl
+"docker.io/bitnami/kubectl":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_kubectl
+  private: docker-hosted.nstl-dev.com/bitnami/kubectl
+
 
 # apache
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/kafka
