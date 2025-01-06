@@ -55,6 +55,15 @@
 "docker.io/library/flink":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink
   private: docker-hosted.nstl-dev.com/library/flink
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/alpine
+"docker.io/library/alpine":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_alpine
+  private: docker-hosted.nstl-dev.com/library/alpine
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/golang
+"docker.io/library/golang":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_golang
+  private: docker-hosted.nstl-dev.com/library/golang
+
 
 # docker.elastic.co 与 docker.io 共用一份存储库
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/library/elasticsearch
