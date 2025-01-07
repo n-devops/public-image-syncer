@@ -63,6 +63,10 @@
 "docker.io/library/golang":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_golang
   private: docker-hosted.nstl-dev.com/library/golang
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/library/python
+"docker.io/library/python":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_python
+  private: docker-hosted.nstl-dev.com/library/python
 
 
 # docker.elastic.co 与 docker.io 共用一份存储库
