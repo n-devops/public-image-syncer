@@ -234,6 +234,34 @@ mycat:
 
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:$tag
 
+# python
+python-common:
+    ARG tag='3.13.1-bookworm'
+    ARG extTag=$tag-n-ext
+    FROM docker.io/library/python:$tag
+
+    #设置时区环境
+    ENV TZ=Asia/Shanghai
+    # 指定目录进行下载
+    WORKDIR /data
+
+    RUN apt-get update > /dev/null 2>&1 \
+     # 安装时区包
+     && apt-get install -y tzdata > /dev/null 2>&1 \
+     # 设置时区
+     && echo $TZ > /etc/timezone \
+     && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
+     # 验证时区
+     && date -R && ls -l /etc/localtime \
+     # 安装wget tini
+     && apt-get install -y wget tini > /dev/null 2>&1 \
+     # 清理缓存
+     && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_python:$extTag
+
+python-3.13:
+    BUILD +python-common --tag='3.13.1-bookworm'
+
 
 all:
     BUILD +teamcity-agent
@@ -241,7 +269,7 @@ all:
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +eclipse-temurin-17
+    BUILD +python-3.13
 
 sync:
     FROM scratch

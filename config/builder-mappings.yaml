@@ -25,3 +25,6 @@
 # eclipse-temurin
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/library/eclipse-temurin
+# python
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_python:/^(.*)(-n-ext)$/":
+  private: docker-hosted.nstl-dev.com/library/python
