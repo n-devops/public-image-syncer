@@ -256,7 +256,7 @@ python-common:
      # 安装wget tini
      && apt-get install -y wget tini > /dev/null 2>&1 \
      # 清理缓存
-     && apt-get clean && rm -rf /var/lib/apt/lists/* \
+     && apt-get clean && rm -rf /var/lib/apt/lists/*
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_python:$extTag
 
 python-3.13:
