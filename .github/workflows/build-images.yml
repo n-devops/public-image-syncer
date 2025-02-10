@@ -18,14 +18,10 @@ jobs:
     env:
       FORCE_COLOR: 1
     steps:
-      - uses: earthly/actions-setup@v1
-        with:
-          github-token: ${{ secrets.GITHUB_EARTHLY_TOKEN }}
-          version: ^0.8.0
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Docker login # to avoid dockerhub rate-limiting
         run: docker login --username "${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME }}" --password "${{ secrets.ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD }}" registry.cn-beijing.aliyuncs.com/public-image-mirror
       - name: what version is installed?
-        run: earthly --version
+        run: ./bin/earthly --version
       - name: build images
-        run: earthly --ci --push +specified
+        run: ./bin/earthly --ci --push +specified
