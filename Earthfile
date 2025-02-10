@@ -258,7 +258,7 @@ python-common:
      # 清理缓存
      && apt-get clean && rm -rf /var/lib/apt/lists/* \
      # 安装pdm
-     && curl -sSL https://pdm-project.org/install-pdm.py | python3 -
+     && pip install -U pdm
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_python:$extTag
 
 python-3.13:
