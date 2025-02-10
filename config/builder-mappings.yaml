@@ -8,19 +8,19 @@
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_adoptopenjdk_openjdk11:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/adoptopenjdk/openjdk11
 # docker.io/library/flink
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:/^(.*)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_flink:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/library/flink
 # docker.io/library/mariadb
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb:/^(.*)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mariadb:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/library/mariadb
 # docker.io/library/mongo
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo:/^(.*)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mongo:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/library/mongo
 # docker.io/bitnami/mariadb
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_mariadb:/^(.*)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_bitnami_mariadb:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/bitnami/mariadb
 # mycat
-"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:/^(.*)$/":
+"registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_mycat:/^(.*)(-n-ext)$/":
   private: docker-hosted.nstl-dev.com/library/mycat
 # eclipse-temurin
 "registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_eclipse-temurin:/^(.*)(-n-ext)$/":
