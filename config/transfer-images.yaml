@@ -30,11 +30,11 @@
 
 ########################################################################################### docker.io/jetbrains
 # docker.io/jetbrains/teamcity-server
-# Tag list: https://explore.ggcr.dev/?repo=jetbrains/teamcity-server
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/jetbrains/teamcity-server
 #"docker.io/jetbrains/teamcity-server:/^(2024|2025|2026)(.[0-9]+)*$/":
 
 # docker.io/jetbrains/teamcity-agent
-# Tag list: https://explore.ggcr.dev/?repo=jetbrains/teamcity-agent
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/jetbrains/teamcity-agent
 #"docker.io/jetbrains/teamcity-agent:/^(2024|2025|2026)(.[0-9]+)*$/":
 
 # docker.io/jetbrains/qodana-jvm-community
@@ -49,7 +49,7 @@
 
 ########################################################################################### docker.io/openresty
 # docker.io/openresty/openresty
-# Tag list: https://explore.ggcr.dev/?repo=openresty/openresty
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/openresty/openresty
 #"docker.io/openresty/openresty:/latest.*/":
 #"docker.io/openresty/openresty:alpine,bionic,bookworm,bullseye,buster,centos,fedora,focal,jammy,jessie,rocky,stretch,trusty,wheezy,xenial":
 

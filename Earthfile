@@ -39,10 +39,7 @@ teamcity-agent-common:
     SAVE IMAGE --push registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_teamcity-agent:$extTag
 
 teamcity-agent:
-    BUILD +teamcity-agent-common --tag='2024.03'
-    BUILD +teamcity-agent-common --tag='2024.03.1'
-    BUILD +teamcity-agent-common --tag='2024.03.2'
-    BUILD +teamcity-agent-common --tag='2024.03.3'
+    BUILD +teamcity-agent-common --tag='2024.12.2'
 
 # elasticsearch
 elasticsearch-7:
@@ -271,7 +268,7 @@ all:
     BUILD +adoptopenjdk-openjdk11
 
 specified:
-    BUILD +python-3.13
+    BUILD +teamcity-agent
 
 sync:
     FROM scratch
