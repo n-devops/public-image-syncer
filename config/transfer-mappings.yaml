@@ -348,6 +348,11 @@
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openmetadata_postgresql
   private: docker-hosted.nstl-dev.com/openmetadata/postgresql
 
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/ollama/ollama
+"docker.io/ollama/ollama":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_ollama_ollama
+  private: docker-hosted.nstl-dev.com/ollama/ollama
+
 # registry.k8s.io 镜像
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-apiserver
 "registry.k8s.io/kube-apiserver":

@@ -15,6 +15,8 @@ teamcity-agent-common:
     FROM jetbrains/teamcity-agent:$tag
     USER root
     RUN apt-get update -y > /dev/null 2>&1 \
+     # git lfs
+     && apt-get install git-lfs -y \
      # node
      && curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
      && apt-get install nodejs wget unzip jq -y > /dev/null 2>&1 \
