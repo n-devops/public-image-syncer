@@ -39,7 +39,7 @@
 
 # docker.io/jetbrains/qodana-jvm-community
 # Tag list: https://explore.ggcr.dev/?repo=jetbrains/qodana-jvm-community
-"docker.io/jetbrains/teamcity-agent:latest":
+#"docker.io/jetbrains/teamcity-agent:latest":
 
 ########################################################################################### docker.io/nginx
 # docker.io/nginx
