@@ -20,18 +20,20 @@ if __name__ == '__main__':
     with open("./config/transfer-images.yaml", "r") as f:
         transferImages = yaml.load(f, Loader=yaml.FullLoader)
 
-    for publicImage in transferImages:
-        repository = publicImage.split(":")[0]
-        tag = publicImage.split(":")[1]
+    # transferImages 不为空执行下面代码
+    if transferImages is not None:
+        for publicImage in transferImages:
+            repository = publicImage.split(":")[0]
+            tag = publicImage.split(":")[1]
 
-        if repository not in transferMappings:
-            raise ValueError("transfer-mappings.yaml 映射中没有此仓库的配置: " + repository)
+            if repository not in transferMappings:
+                raise ValueError("transfer-mappings.yaml 映射中没有此仓库的配置: " + repository)
 
-        transferRepository = transferMappings[repository]["transfer"]
-        privateRepository = transferMappings[repository]["private"]
+            transferRepository = transferMappings[repository]["transfer"]
+            privateRepository = transferMappings[repository]["private"]
 
-        transferDict[publicImage] = transferRepository
-        privateDict[transferRepository + ":" + tag] = privateRepository
+            transferDict[publicImage] = transferRepository
+            privateDict[transferRepository + ":" + tag] = privateRepository
 
     transferLines = []
     for k, v in transferDict.items():
