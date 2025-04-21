@@ -134,6 +134,10 @@
 "docker.io/jetbrains/qodana-jvm-community":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_qodana-jvm-community
   private: docker-hosted.nstl-dev.com/jetbrains/qodana-jvm-community
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/jetbrains/writerside-builder
+"docker.io/jetbrains/writerside-builder":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_jetbrains_writerside-builder
+  private: docker-hosted.nstl-dev.com/jetbrains/writerside-builder
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/openresty/openresty
 "docker.io/openresty/openresty":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_openresty_openresty
