@@ -1,0 +1,12 @@
+########################################################################################### docker-hosted.nstl-dev.com/medkaas
+# docker-hosted.nstl-dev.com/medkaas/medkaas-ui
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/medkaas-ui/artifacts-tab
+"docker-hosted.nstl-dev.com/medkaas/medkaas-ui:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas-ui"
+
+# docker-hosted.nstl-dev.com/medkaas/medkaas-service
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/medkaas-service/artifacts-tab
+"docker-hosted.nstl-dev.com/medkaas/medkaas-service:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas-service"
+
+# docker-hosted.nstl-dev.com/medkaas/medkaas-gateway-medkaas
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/medkaas-gateway-medkaas/artifacts-tab
+"docker-hosted.nstl-dev.com/medkaas/medkaas-gateway-medkaas:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas-gateway-medkaas"
