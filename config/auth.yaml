@@ -4,6 +4,9 @@
 "registry.cn-beijing.aliyuncs.com/nstl_google_containers":
   username: ${ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME}
   password: ${ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD}
+"registry.cn-beijing.aliyuncs.com/ninemax":
+  username: ${ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_USERNAME}
+  password: ${ALIYUNCS_BEIJING_PUBLIC_IMAGE_MIRROR_PASSWORD}
 "docker-hosted.nstl-dev.com":
   username: ${HARBOR_USERNAME}
   password: ${HARBOR_PASSWORD}
