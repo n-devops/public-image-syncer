@@ -10,3 +10,7 @@
 # docker-hosted.nstl-dev.com/medkaas/medkaas-gateway-medkaas
 # Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/medkaas-gateway-medkaas/artifacts-tab
 "docker-hosted.nstl-dev.com/medkaas/medkaas-gateway-medkaas:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas-gateway-medkaas"
+
+# docker-hosted.nstl-dev.com/medkaas/medkaas1-api-doc
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/edkaas1-api-doc/artifacts-tab
+"docker-hosted.nstl-dev.com/medkaas/edkaas1-api-doc:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas-gateway-medkaas"
