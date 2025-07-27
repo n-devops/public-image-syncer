@@ -14,3 +14,7 @@
 # docker-hosted.nstl-dev.com/medkaas/medkaas1-api-doc
 # Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/edkaas1-api-doc/artifacts-tab
 "docker-hosted.nstl-dev.com/medkaas/medkaas1-api-doc:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas1-api-doc"
+
+# docker-hosted.nstl-dev.com/medkaas/medkaas1-frontend-168
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/medkaas1-frontend-168/artifacts-tab
+"docker-hosted.nstl-dev.com/medkaas/medkaas1-frontend-168:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas1-frontend-168"
