@@ -357,6 +357,11 @@
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_ollama_ollama
   private: docker-hosted.nstl-dev.com/ollama/ollama
 
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/n8nio/n8n
+"docker.io/n8nio/n8n":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_n8nio_n8n
+  private: docker-hosted.nstl-dev.com/n8nio/n8n
+
 # registry.k8s.io 镜像
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-apiserver
 "registry.k8s.io/kube-apiserver":
