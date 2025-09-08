@@ -362,6 +362,12 @@
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_n8nio_n8n
   private: docker-hosted.nstl-dev.com/n8nio/n8n
 
+# tools
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/matrixseven/file-transfer-go
+"docker.io/matrixseven/file-transfer-go":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_matrixseven_file-transfer-go
+  private: docker-hosted.nstl-dev.com/matrixseven/file-transfer-go
+
 # registry.k8s.io 镜像
 # Tag list: https://explore.ggcr.dev/?repo=registry.k8s.io/kube-apiserver
 "registry.k8s.io/kube-apiserver":
