@@ -23,7 +23,7 @@ teamcity-agent-common:
      && fnm install 22 \
      && fnm install 24 \
      && fnm list \
-     && fnm current
+     && fnm use 18
     RUN apt-get update -y > /dev/null 2>&1 \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
