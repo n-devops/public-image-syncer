@@ -14,7 +14,9 @@ teamcity-agent-common:
     ARG extTag=$tag-n-ext
     FROM jetbrains/teamcity-agent:$tag
     USER root
-    ENV FNM_DIR=/root/.fnm
+    # 安装 fnm
+    RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+    ENV PATH="/root/.local/share/fnm:$PATH"
     RUN apt-get update -y > /dev/null 2>&1 \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
@@ -26,7 +28,6 @@ teamcity-agent-common:
      # git lfs
      && apt-get install git-lfs -y \
      # 安装node
-     && curl -fsSL https://fnm.vercel.app/install | bash \
      && fnm env \
      && fnm install 18 \
      && fnm install 20 \
