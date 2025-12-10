@@ -14,6 +14,7 @@ teamcity-agent-common:
     ARG extTag=$tag-n-ext
     FROM jetbrains/teamcity-agent:$tag
     USER root
+    ENV NVM_DIR=/root/.nvm
     RUN apt-get update -y > /dev/null 2>&1 \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
@@ -26,6 +27,7 @@ teamcity-agent-common:
      && apt-get install git-lfs -y \
      # 安装 nvm 并且安装node
      && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash \
+     && bash -c "source $NVM_DIR/nvm.sh" \
      && nvm list \
      && nvm install 18.20.8 \
      && nvm install 20.19.6 \
