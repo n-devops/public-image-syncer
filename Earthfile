@@ -27,12 +27,13 @@ teamcity-agent-common:
      && apt-get install git-lfs -y \
      # 安装 nvm 并且安装node
      && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash \
-     && bash -c "source $NVM_DIR/nvm.sh && nvm install 18.20.8" \
-     && bash -c "source $NVM_DIR/nvm.sh && nvm install 20.19.6" \
-     && bash -c "source $NVM_DIR/nvm.sh && nvm install 22.21.1" \
-     && bash -c "source $NVM_DIR/nvm.sh && nvm install 24.11.1" \
-     && bash -c "source $NVM_DIR/nvm.sh && nvm list" \
-     && bash -c "source $NVM_DIR/nvm.sh && nvm current" \
+     && source $NVM_DIR/nvm.sh\
+     && nvm install 18.20.8 \
+     && nvm install 20.19.6 \
+     && nvm install 22.21.1 \
+     && nvm install 24.11.1 \
+     && nvm list \
+     && nvm current \
      && apt-get install wget unzip jq -y > /dev/null 2>&1 \
      # standard-version
      && npm i -g standard-version > /dev/null 2>&1 \
