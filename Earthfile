@@ -27,7 +27,7 @@ teamcity-agent-common:
      && apt-get install git-lfs -y \
      # 安装node
      && curl -fsSL https://fnm.vercel.app/install | bash \
-     && . "$FNM_DIR/fnm" env \
+     && fnm env \
      && fnm install 18 \
      && fnm install 20 \
      && fnm install 22 \
