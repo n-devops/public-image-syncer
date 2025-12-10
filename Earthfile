@@ -14,7 +14,7 @@ teamcity-agent-common:
     ARG extTag=$tag-n-ext
     FROM jetbrains/teamcity-agent:$tag
     USER root
-    ENV NVM_DIR=/root/.nvm
+    ENV FNM_DIR=/root/.fnm
     RUN apt-get update -y > /dev/null 2>&1 \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
@@ -25,15 +25,15 @@ teamcity-agent-common:
      && date -R && ls -l /etc/localtime \
      # git lfs
      && apt-get install git-lfs -y \
-     # 安装 nvm 并且安装node
-     && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash \
-     && source $NVM_DIR/nvm.sh\
-     && nvm install 18.20.8 \
-     && nvm install 20.19.6 \
-     && nvm install 22.21.1 \
-     && nvm install 24.11.1 \
-     && nvm list \
-     && nvm current \
+     # 安装node
+     && curl -fsSL https://fnm.vercel.app/install | bash \
+     && . "$FNM_DIR/fnm" env \
+     && fnm install 18 \
+     && fnm install 20 \
+     && fnm install 22 \
+     && fnm install 24 \
+     && fnm list \
+     && fnm current \
      && apt-get install wget unzip jq -y > /dev/null 2>&1 \
      # standard-version
      && npm i -g standard-version > /dev/null 2>&1 \
