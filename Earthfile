@@ -17,6 +17,13 @@ teamcity-agent-common:
     # 安装 fnm
     RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
     ENV PATH="/root/.local/share/fnm:$PATH"
+    RUN fnm env \
+     && fnm install 18 \
+     && fnm install 20 \
+     && fnm install 22 \
+     && fnm install 24 \
+     && fnm list \
+     && fnm current
     RUN apt-get update -y > /dev/null 2>&1 \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
@@ -27,14 +34,6 @@ teamcity-agent-common:
      && date -R && ls -l /etc/localtime \
      # git lfs
      && apt-get install git-lfs -y \
-     # 安装node
-     && fnm env \
-     && fnm install 18 \
-     && fnm install 20 \
-     && fnm install 22 \
-     && fnm install 24 \
-     && fnm list \
-     && fnm current \
      && apt-get install wget unzip jq -y > /dev/null 2>&1 \
      # standard-version
      && npm i -g standard-version > /dev/null 2>&1 \
