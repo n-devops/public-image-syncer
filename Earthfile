@@ -24,9 +24,16 @@ teamcity-agent-common:
      && date -R && ls -l /etc/localtime \
      # git lfs
      && apt-get install git-lfs -y \
-     # node
-     && curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
-     && apt-get install nodejs wget unzip jq -y > /dev/null 2>&1 \
+     # 安装 nvm 并且安装node
+     && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash \
+     && nvm list \
+     && nvm install 18.20.8 \
+     && nvm install 20.19.6 \
+     && nvm install 22.21.1 \
+     && nvm install 24.11.1 \
+     && nvm list \
+     && nvm current \
+     && apt-get install wget unzip jq -y > /dev/null 2>&1 \
      # standard-version
      && npm i -g standard-version > /dev/null 2>&1 \
      && npm i -g commit-and-tag-version > /dev/null 2>&1 \
