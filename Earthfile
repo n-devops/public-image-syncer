@@ -17,8 +17,8 @@ teamcity-agent-common:
     # 安装 system node
     RUN curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
      # standard-version
-     && npm i -g standard-version > /dev/null 2>&1 \
-     && npm i -g commit-and-tag-version > /dev/null 2>&1
+     && npm i -g standard-version \
+     && npm i -g commit-and-tag-version
     # 安装
     RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
     ENV PATH="/root/.local/share/fnm:$PATH"
