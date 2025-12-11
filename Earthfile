@@ -14,21 +14,15 @@ teamcity-agent-common:
     ARG extTag=$tag-n-ext
     FROM jetbrains/teamcity-agent:$tag
     USER root
-    # 安装 system node
+    # 添加源地址
     RUN curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
+     && apt-get update -y > /dev/null 2>&1 \
+     # 安装system node
+     && apt-get install nodejs \
+     && node -v \
      # standard-version
      && npm i -g standard-version \
      && npm i -g commit-and-tag-version
-    # 安装
-    RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-    ENV PATH="/root/.local/share/fnm:$PATH"
-    RUN eval "$(fnm env --use-on-cd --shell bash)" \
-     && fnm install 20 \
-     && fnm install 22 \
-     && fnm install 24 \
-     && fnm list \
-     && fnm use 18
-    RUN apt-get update -y > /dev/null 2>&1 \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
      # 设置时区
@@ -51,6 +45,15 @@ teamcity-agent-common:
      && chmod +x /usr/bin/yq \
      # 清理缓存
      && apt-get clean && rm -rf /var/lib/apt/lists/*
+    # 安装多版本node
+    RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+    ENV PATH="/root/.local/share/fnm:$PATH"
+    RUN eval "$(fnm env --use-on-cd --shell bash)" \
+     && fnm install 20 \
+     && fnm install 22 \
+     && fnm install 24 \
+     && fnm list \
+     && fnm current
     # gradle 环境变量
     ENV GRADLE_HOME=/opt/gradle/gradle-8.7
     ENV PATH=$PATH:$GRADLE_HOME/bin
