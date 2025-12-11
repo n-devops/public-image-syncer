@@ -17,7 +17,7 @@ teamcity-agent-common:
     # 添加源地址
     RUN curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
      && apt-get update -y > /dev/null 2>&1 \
-     # 安装system node
+     # 安装system node \
      && apt-get install nodejs \
      && node -v \
      # standard-version
