@@ -17,7 +17,7 @@ teamcity-agent-common:
     # 安装 fnm
     RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
     ENV PATH="/root/.local/share/fnm:$PATH"
-    RUN fnm env \
+    RUN eval "$(fnm env --use-on-cd --shell bash)" \
      && fnm install 18 \
      && fnm install 20 \
      && fnm install 22 \
