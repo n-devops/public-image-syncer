@@ -17,12 +17,12 @@ teamcity-agent-common:
     # 添加源地址
     RUN curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - > /dev/null 2>&1 \
      && apt-get update -y > /dev/null 2>&1 \
-     # 安装system node \
-     && apt-get install nodejs \
+     # 安装system node
+     && apt-get install nodejs -y \
      && node -v \
      # standard-version
      && npm i -g standard-version \
-     && npm i -g commit-and-tag-version
+     && npm i -g commit-and-tag-version \
      # 安装时区包
      && apt-get install -y tzdata > /dev/null 2>&1 \
      # 设置时区
