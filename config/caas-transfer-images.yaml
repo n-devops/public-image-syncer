@@ -6,3 +6,11 @@
 # docker-hosted.nstl-dev.com/caas/kgms
 # Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/68/repositories/kgms/artifacts-tab
 "docker-hosted.nstl-dev.com/caas/kgms:latest": "registry.cn-beijing.aliyuncs.com/ninemax/caas_kgms"
+
+# docker-hosted.nstl-dev.com/caas/caas-mining
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/68/repositories/caas-mining/artifacts-tab
+"docker-hosted.nstl-dev.com/caas/caas-mining:/(.*)/": "registry.cn-beijing.aliyuncs.com/ninemax/caas_caas-mining"
+
+# docker-hosted.nstl-dev.com/caas/caas-frontend-ui
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/68/repositories/caas-frontend-ui/artifacts-tab
+"docker-hosted.nstl-dev.com/caas/caas-frontend-ui:/(.*)/": "registry.cn-beijing.aliyuncs.com/ninemax/caas_caas-frontend-ui"
