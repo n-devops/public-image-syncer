@@ -421,6 +421,10 @@
 "ghcr.io/apache/flink-kubernetes-operator":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_apache_flink-kubernetes-operator
   private: docker-hosted.nstl-dev.com/apache/flink-kubernetes-operator
+# Tag list: https://explore.ggcr.dev/?repo=ghcr.io/astral-sh/uv
+"ghcr.io/astral-sh/uv":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/ghcr.io_astral-sh_uv
+  private: docker-hosted.nstl-dev.com/astral-sh/uv
 
 # quay.io
 # Tag list: https://explore.ggcr.dev/?repo=quay.io/openshift-scale/etcd-perf
