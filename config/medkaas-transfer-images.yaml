@@ -20,3 +20,7 @@
 # Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/medkaas1-frontend-168/artifacts-tab
 "docker-hosted.nstl-dev.com/medkaas/medkaas1-frontend-168:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas1-frontend-168"
 "docker-hosted.nstl-dev.com/medkaas/medkaas1-frontend-168:latest": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_medkaas1-frontend-168"
+
+# docker-hosted.nstl-dev.com/medkaas/algorithms-core
+# Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/algorithms-core/artifacts-tab
+"docker-hosted.nstl-dev.com/medkaas/algorithms-core:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_algorithms-core"
