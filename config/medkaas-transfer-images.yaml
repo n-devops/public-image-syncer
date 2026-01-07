@@ -23,4 +23,4 @@
 
 # docker-hosted.nstl-dev.com/medkaas/algorithms-core
 # Tag list: http://docker-hosted.nstl-dev.com/harbor/projects/67/repositories/algorithms-core/artifacts-tab
-"docker-hosted.nstl-dev.com/medkaas/algorithms-core:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_algorithms-core"
+#"docker-hosted.nstl-dev.com/medkaas/algorithms-core:/^(1.*)?$/": "registry.cn-beijing.aliyuncs.com/ninemax/medkaas_algorithms-core"
