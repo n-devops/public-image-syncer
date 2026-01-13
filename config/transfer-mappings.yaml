@@ -317,6 +317,10 @@
 "docker.io/vesoft/nebula-graph-studio":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vesoft_nebula-graph-studio
   private: docker-hosted.nstl-dev.com/vesoft/nebula-graph-studio
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/vllm/vllm-openai
+"docker.io/vllm/vllm-openai":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_vllm_vllm-openai
+  private: docker-hosted.nstl-dev.com/vllm/vllm-openai
 
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/kubernetesui/dashboard-api
 "docker.io/kubernetesui/dashboard-api":
