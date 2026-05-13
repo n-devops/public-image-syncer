@@ -67,6 +67,14 @@
 "docker.io/library/python":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_library_python
   private: docker-hosted.nstl-dev.com/library/python
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/drone/drone
+"docker.io/drone/drone":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_drone_drone
+  private: docker-hosted.nstl-dev.com/drone/drone
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/drone/drone-runner-docker
+"docker.io/drone/drone-runner-docker":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_drone_drone-runner-docker
+  private: docker-hosted.nstl-dev.com/drone/drone-runner-docker
 
 
 # docker.elastic.co 与 docker.io 共用一份存储库
@@ -295,6 +303,10 @@
 "docker.io/apache/skywalking-banyandb":
   transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_skywalking-banyandb
   private: docker-hosted.nstl-dev.com/apache/skywalking-banyandb
+# Tag list: https://explore.ggcr.dev/?repo=docker.io/apache/seatunnel
+"docker.io/apache/seatunnel":
+  transfer: registry.cn-beijing.aliyuncs.com/public-image-mirror/docker.io_apache_seatunnel
+  private: docker-hosted.nstl-dev.com/apache/seatunnel
 
 # NebulaGraph
 # Tag list: https://explore.ggcr.dev/?repo=docker.io/vesoft/nebula-metad
